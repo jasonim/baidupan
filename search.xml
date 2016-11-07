@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[Android 单元测试-Mockito]]></title>
       <url>%2F2016%2F11%2F07%2Fandroid-unit-test-mock%2F</url>
-      <content type="text"><![CDATA[以前我在[内功之自动化测试]中说到测试在项目中的重要性。单元测试是一个个「点」（细胞）的重构，是重构的基石，今天我们说单元测试中如何使用 [Mock] 及 [Mockito]的。 Mock 概念所谓的mock就是创建一个类的虚假的对象，在测试环境中，用来替换掉真实的对象，主要提供两大功能： 验证这个对象的某些方法的调用情况，调用了多少次，参数是什么等等 指定这个对象的某些方法的行为，返回特定的值，或者是执行特定的动作 要使用Mock，一般需要用到mock框架，这篇文章我们使用 Mockito 这个框架，这个是Java界使用最广泛的一个mock框架。 在 Gradle 添加 Mockito 依赖12repositories &#123; jcenter() &#125;dependencies &#123; testCompile &quot;org.mockito:mockito-core:1.+&quot; &#125; 如何使用？我们首先看一下官方的例子:123&#123;&#125;]]></content>
+      <content type="text"><![CDATA[以前我在[内功之自动化测试]中说到测试在项目中的重要性。单元测试是一个个「点」（细胞）的重构，是重构的基石，今天我们说单元测试中如何使用 [Mock] 及 [Mockito]的。 Mock 概念所谓的mock就是创建一个类的虚假的对象，在测试环境中，用来替换掉真实的对象，主要提供两大功能： 验证这个对象的某些方法的调用情况，调用了多少次，参数是什么等等 指定这个对象的某些方法的行为，返回特定的值，或者是执行特定的动作 要使用Mock，一般需要用到mock框架，这篇文章我们使用 Mockito 这个框架，这个是Java界使用最广泛的一个mock框架。 在 Gradle 添加 Mockito 依赖12repositories &#123; jcenter() &#125;dependencies &#123; testCompile &quot;org.mockito:mockito-core:1.+&quot; &#125; 如何使用？我们首先看一下官方的例子:1//mock creation List]]></content>
     </entry>
 
     
