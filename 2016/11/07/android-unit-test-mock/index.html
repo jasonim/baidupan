@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:08:25.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:09:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -368,6 +368,10 @@
 <li>注解的方式 @Mock，注意要利用注解， 首先要告诉 Mockito 框架， 可以<code>@Rule public MockitoRule mockitoRule = MockitoJUnit.rule);</code> 或者它的实现<code>MockitoAnnotations.initMocks(target);</code></li>
 </ul>
 <h3 id="误区一"><a href="#误区一" class="headerlink" title="误区一"></a>误区一</h3><p>上面的例子我们进行修改 ==&gt; 为不同于上面的地方，如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//mock creation List</span></div><div class="line">mock(List.class);</div><div class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"><span class="comment">//using mock object - it does not throw any "unexpected interaction" exception</span></div><div class="line">list.add(<span class="string">"one"</span>);</div><div class="line"><span class="comment">// selective, explicit, highly readable verification</span></div><div class="line">verify(list).add(<span class="string">"one"</span>);</div></pre></td></tr></table></figure></p>
+<p>运行发现如下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">org.mockito.exceptions.misusing.NotAMockException: </div><div class="line">Argument passed to verify() is of type ArrayList and is not a mock!</div><div class="line">Make sure you place the parenthesis correctly!</div><div class="line">See the examples of correct verifications:</div><div class="line">verify(mock).someMethod();</div><div class="line">verify(mock, times(10)).someMethod();</div><div class="line">verify(mock, atLeastOnce()).someMethod();</div></pre></td></tr></table></figure>
+<p>这就是mock的第一个误解：<strong>Mockito.mock()并不是mock一整个类，而是根据传进去的一个类，mock出属于这个类的一个对象，并且返回这个mock对象；而传进去的这个类本身并没有改变，用这个类new出来的对象也没有受到任何改变！</strong></p>
+<p>结合上面的例子，Mockito.mock(ArrayList.class);只是返回了一个属于ArrayList这个类的一个mock对象。ArrayList这个类本身没有受到任何影响，而 list 不是一个mock对象。Mockito.verify()的参数必须是mock对象，也就是说，Mockito只能验证mock对象的方法调用情况。因此，上面那种写法就出错了。</p>
 
       
     </div>
