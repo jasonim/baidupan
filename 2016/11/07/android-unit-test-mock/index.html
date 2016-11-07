@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:14:02.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:26:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -372,7 +372,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">org.mockito.exceptions.misusing.NotAMockException: </div><div class="line">Argument passed to verify() is of type ArrayList and is not a mock!</div><div class="line">Make sure you place the parenthesis correctly!</div><div class="line">See the examples of correct verifications:</div><div class="line">verify(mock).someMethod();</div><div class="line">verify(mock, times(10)).someMethod();</div><div class="line">verify(mock, atLeastOnce()).someMethod();</div></pre></td></tr></table></figure>
 <p>这就是mock的第一个误解：<strong>Mockito.mock()并不是mock一整个类，而是根据传进去的一个类，mock出属于这个类的一个对象，并且返回这个mock对象；而传进去的这个类本身并没有改变，用这个类new出来的对象也没有受到任何改变！</strong></p>
 <p>结合上面的例子，Mockito.mock(ArrayList.class);只是返回了一个属于ArrayList这个类的一个mock对象。ArrayList这个类本身没有受到任何影响，而 list 不是一个mock对象。Mockito.verify()的参数必须是mock对象，也就是说，Mockito只能验证mock对象的方法调用情况。因此，上面那种写法就出错了。</p>
-<h3 id="误区二"><a href="#误区二" class="headerlink" title="误区二"></a>误区二</h3><p>我们先看一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure></p>
+<h3 id="误区二"><a href="#误区二" class="headerlink" title="误区二"></a>误区二</h3><p>我们先看一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>上面是一个登录操作， 现在我们来验证 login() 函数， 因为它没有返回值，这时候我们只要验证 execute() 有没有执行进行了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">由于 UserLoginTask 继承 AsyncTask， 所有会报错 误区一中的问题（not  mock），这时候我们需要用到 Robolectric 框架，这个可以参考我[以前写的]。解决这个问题以后你会发现，fuck，怎么还有问题， 什么鬼。。</div><div class="line">(img)</div><div class="line">mock的第二个误解：**mock出来的对象并不会自动替换掉正式代码里面的对象，你必须要有某种方式把mock对象应用到正式代码里面。**</div><div class="line"></div><div class="line">这个时候我们可以通过 构造方式将依赖传进去，就 OK 了。</div><div class="line"></div><div class="line">```java</div></pre></td></tr></table></figure>
+<p>修改测试用例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">…</div><div class="line">LoginPresenter loginPresenter = new LoginPresenter(mockLonginTask); //==&gt;</div></pre></td></tr></table></figure></p>
+<p>运行发现终于成功了， 不容易。。</p>
+<h3 id="验证方法调用及参数"><a href="#验证方法调用及参数" class="headerlink" title="验证方法调用及参数"></a>验证方法调用及参数</h3><p>使用Mockito，验证一个对象的方法调用情况：<br>Mockito.verify(objectToVerify).methodToVerify(arguments);<br>其中 objectToVerify 和 methodToVerify 对应上面的 mockedList 和 add，表示验证 mockedList 的 add 方法是否传入参数是 one。</p>
+<p>很多时候你并不关心被调用方法的参数具体是什么，或者是你也不知道，你只关心这个方法得到调用了就行。这种情况下，Mockito提供了一系列的any方法，来表示任何的参数都行。</p>
+<p>anyString()表示任何一个字符串都可以。类似anyString，还有anyInt, anyLong, anyDouble等等。anyObject表示任何对象，any(clazz)表示任何属于clazz的对象。</p>
+<h3 id="指定mock对象的某些方法的行为"><a href="#指定mock对象的某些方法的行为" class="headerlink" title="指定mock对象的某些方法的行为"></a>指定mock对象的某些方法的行为</h3><p>那么接下来，我们就来介绍mock的第二大作用，先介绍其中的第一点：指定mock对象的某个方法返回特定的值。<br>我们见面的 login() 进行修改， 添加对网络的判断， 代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">修改测试代码：</div><div class="line">```java</div><div class="line">NetManagerWraper netManagerWraper = mock(NetManagerWraper.class); <span class="comment">//==&gt;</span></div><div class="line">when(netManagerWraper.isConnected()).thenReturn(<span class="keyword">false</span>); ==&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -578,7 +587,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误区二"><span class="nav-number">3.2.</span> <span class="nav-text">误区二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误区二"><span class="nav-number">3.2.</span> <span class="nav-text">误区二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证方法调用及参数"><span class="nav-number">3.3.</span> <span class="nav-text">验证方法调用及参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定mock对象的某些方法的行为"><span class="nav-number">3.4.</span> <span class="nav-text">指定mock对象的某些方法的行为</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
