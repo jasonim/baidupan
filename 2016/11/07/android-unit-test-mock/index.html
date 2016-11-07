@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:09:37.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:14:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -372,6 +372,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">org.mockito.exceptions.misusing.NotAMockException: </div><div class="line">Argument passed to verify() is of type ArrayList and is not a mock!</div><div class="line">Make sure you place the parenthesis correctly!</div><div class="line">See the examples of correct verifications:</div><div class="line">verify(mock).someMethod();</div><div class="line">verify(mock, times(10)).someMethod();</div><div class="line">verify(mock, atLeastOnce()).someMethod();</div></pre></td></tr></table></figure>
 <p>这就是mock的第一个误解：<strong>Mockito.mock()并不是mock一整个类，而是根据传进去的一个类，mock出属于这个类的一个对象，并且返回这个mock对象；而传进去的这个类本身并没有改变，用这个类new出来的对象也没有受到任何改变！</strong></p>
 <p>结合上面的例子，Mockito.mock(ArrayList.class);只是返回了一个属于ArrayList这个类的一个mock对象。ArrayList这个类本身没有受到任何影响，而 list 不是一个mock对象。Mockito.verify()的参数必须是mock对象，也就是说，Mockito只能验证mock对象的方法调用情况。因此，上面那种写法就出错了。</p>
+<h3 id="误区二"><a href="#误区二" class="headerlink" title="误区二"></a>误区二</h3><p>我们先看一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -577,7 +578,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误区二"><span class="nav-number">3.2.</span> <span class="nav-text">误区二</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
