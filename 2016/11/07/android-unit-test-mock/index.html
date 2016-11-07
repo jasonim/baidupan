@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:28:54.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:30:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -392,6 +392,10 @@
 <li>Mockito.spy(toMockObject);</li>
 <li>通过注解的方式@Spy</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSpy</span><span class="params">()</span> </span>&#123;</div><div class="line">    NetManagerWraper spy = spy(<span class="keyword">new</span> NetManagerWraper());</div><div class="line">    assertTrue(spy.isConnected());</div><div class="line">    when(spy.isConnected()).thenReturn(<span class="keyword">false</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>总之，spy与mock的唯一区别就是默认行为不一样：spy对象的方法默认调用真实的逻辑，mock对象的方法默认什么都不做，或直接返回默认值。</strong></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>上面的就是 Mockito 的基本使用， 当然由于并不是很全，更全面的可以看[这里]。基本的概念都有了， 下面的就是多用， 在项目中发现问题， 然后带着问题去查看文档。 Android 下还可以用 Dagger 动态依赖框架进行测试， 由于涉及到 Dagger 框架的使用，这个我们可以单独来说。</p>
+<p>上面代码在 <a href="https://github.com/jasonim/JasonAndroidSimple/tree/master/mocksample" target="_blank" rel="external">Github</a> 上</p>
 
       
     </div>
@@ -597,7 +601,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误区二"><span class="nav-number">3.2.</span> <span class="nav-text">误区二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证方法调用及参数"><span class="nav-number">3.3.</span> <span class="nav-text">验证方法调用及参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定mock对象的某些方法的行为"><span class="nav-number">3.4.</span> <span class="nav-text">指定mock对象的某些方法的行为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spy"><span class="nav-number">4.</span> <span class="nav-text">Spy</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-概念"><span class="nav-number">1.</span> <span class="nav-text">Mock 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Gradle-添加-Mockito-依赖"><span class="nav-number">2.</span> <span class="nav-text">在 Gradle 添加 Mockito 依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用？"><span class="nav-number">3.</span> <span class="nav-text">如何使用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#误区一"><span class="nav-number">3.1.</span> <span class="nav-text">误区一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误区二"><span class="nav-number">3.2.</span> <span class="nav-text">误区二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证方法调用及参数"><span class="nav-number">3.3.</span> <span class="nav-text">验证方法调用及参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定mock对象的某些方法的行为"><span class="nav-number">3.4.</span> <span class="nav-text">指定mock对象的某些方法的行为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spy"><span class="nav-number">4.</span> <span class="nav-text">Spy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">5.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
           </div>
         </section>
