@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hujiandong.com/about/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -23,7 +16,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -31,6 +24,13 @@
   
   <url>
     <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -51,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/06/09/rich-dad-poor-dad/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -58,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -72,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -87,13 +94,6 @@
   
   <url>
     <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -128,6 +128,13 @@
   </url>
   
   <url>
+    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/11/07/android_open_source_network/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -149,21 +156,14 @@
   </url>
   
   <url>
+    <loc>http://hujiandong.com/2016/08/09/five-years-bj-life/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/01/07/git_common_comand_introduce/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2015/10/12/hack_culture/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -177,7 +177,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/08/09/five-years-bj-life/</loc>
+    <loc>http://hujiandong.com/2015/10/12/hack_culture/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/03/08/hello_son/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -205,28 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/03/08/hello_son/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/04/30/how_github/</loc>
+    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -240,14 +226,21 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/01/12/java_base_question_summary/</loc>
+    <loc>http://hujiandong.com/2016/04/30/how_github/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
+    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -261,7 +254,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
+    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/01/12/java_base_question_summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -282,13 +282,6 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/11/09/learning_java_base_syntax/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hujiandong.com/2015/11/17/learning_java_base_class/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -303,7 +296,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/11/24/learning_java_object1/</loc>
+    <loc>http://hujiandong.com/2015/11/09/learning_java_base_syntax/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/01/28/learning_java_collection/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -317,7 +317,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/01/28/learning_java_collection/</loc>
+    <loc>http://hujiandong.com/2015/11/24/learning_java_object1/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/03/20/learning_java_reflection/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -338,13 +345,6 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/03/20/learning_java_reflection/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hujiandong.com/2016/04/04/my-year-life/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -359,7 +359,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2015/02/08/2015-02-08-hacker/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
@@ -380,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/08/24/2015-08-24-linux-skill/</loc>
+    <loc>http://hujiandong.com/2016/05/14/android-auto-test-espresso/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/14/android-auto-test-espresso/</loc>
+    <loc>http://hujiandong.com/2015/08/24/2015-08-24-linux-skill/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
@@ -401,14 +401,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
-    
-    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2015/02/08/2015-02-08-hacker/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
@@ -416,6 +409,13 @@
   
   <url>
     <loc>http://hujiandong.com/2015/02/16/2015-02-16-work-summary/</loc>
+    
+    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
