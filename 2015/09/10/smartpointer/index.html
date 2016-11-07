@@ -1,0 +1,850 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C++,stl," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JasonThink's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="看一些开源项目，经常发现用智能指针的地方。以前不止一位老大哥给我说过，不要随便用智能指针，用不好就是大坑。每次想用时候想起先人的话就放下了，频繁分配内存的地方都从内存池上分配。报这怀疑的态度，想一探究竟，上网找了一些资料，然后总结了一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能指针解析与实现">
+<meta property="og:url" content="http://hujiandong.com/2015/09/10/smartpointer/index.html">
+<meta property="og:site_name" content="JasonThink's Blog">
+<meta property="og:description" content="看一些开源项目，经常发现用智能指针的地方。以前不止一位老大哥给我说过，不要随便用智能指针，用不好就是大坑。每次想用时候想起先人的话就放下了，频繁分配内存的地方都从内存池上分配。报这怀疑的态度，想一探究竟，上网找了一些资料，然后总结了一下。">
+<meta property="og:image" content="http://hujiandong.com/img/shared_ptr.png">
+<meta property="og:image" content="http://hujiandong.com/img/test.png">
+<meta property="og:updated_time" content="2016-11-07T08:48:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="智能指针解析与实现">
+<meta name="twitter:description" content="看一些开源项目，经常发现用智能指针的地方。以前不止一位老大哥给我说过，不要随便用智能指针，用不好就是大坑。每次想用时候想起先人的话就放下了，频繁分配内存的地方都从内存池上分配。报这怀疑的态度，想一探究竟，上网找了一些资料，然后总结了一下。">
+<meta name="twitter:image" content="http://hujiandong.com/img/shared_ptr.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://hujiandong.com/2015/09/10/smartpointer/"/>
+
+
+  <title> 智能指针解析与实现 | JasonThink's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bce6c38410e11063877362ffaf8f9bdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JasonThink's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                智能指针解析与实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-10T10:50:00+08:00" content="2015-09-10">
+              2015-09-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/lang-C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">lang-C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/10/smartpointer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/10/smartpointer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/09/10/smartpointer/" class="leancloud_visitors" data-flag-title="智能指针解析与实现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>看一些开源项目，经常发现用智能指针的地方。以前不止一位老大哥给我说过，不要随便用智能指针，用不好就是大坑。每次想用时候想起先人的话就放下了，频繁分配内存的地方都从内存池上分配。报这怀疑的态度，想一探究竟，上网找了一些资料，然后总结了一下。</p>
+<h2 id="1-什么是智能指针"><a href="#1-什么是智能指针" class="headerlink" title="1 什么是智能指针"></a>1 什么是智能指针</h2><p>从较浅的层面看，智能指针是利用了一种叫做RAII（资源获取即初始化）的技术对普通的指针进行封装，这使得智能指针实质是一个对象，行为表现的却像一个指针。</p>
+<h2 id="2-智能指针有哪些"><a href="#2-智能指针有哪些" class="headerlink" title="2 智能指针有哪些"></a>2 智能指针有哪些</h2><p>c++里面的四个智能指针: auto_ptr, shared_ptr, weak_ptr, unique_ptr, scoped_ptr(boost), 其中后三个是c++11支持，并且第一个已经被c++11弃用。</p>
+<h3 id="2-1-scoped-ptr"><a href="#2-1-scoped-ptr" class="headerlink" title="2.1 scoped_ptr"></a>2.1 scoped_ptr</h3><p>这是比较简单的一种智能指针，正如其名字所述，scoped_ptr所指向的对象在作用域之外会自动得到析构，一个例子是：此外，scoped_ptr是non-copyable的，也就是说你不能去尝试复制一个scoped_ptr的内容到另外一个scoped_ptr中，这也是为了防止错误的多次析构同一个指针所指向的对象。</p>
+<h3 id="2-2-shared-ptr"><a href="#2-2-shared-ptr" class="headerlink" title="2.2 shared_ptr"></a>2.2 shared_ptr</h3><p>所实现的本质是引用计数(reference counting)，也就是说shared_ptr是支持复制的，复制一个shared_ptr的本质是对这个智能指针的引用次数加1，而当这个智能指针的引用次数降低到0的时候，该对象自动被析构。</p>
+<p>需要特别指出的是，如果shared_ptr所表征的引用关系中出现一个环，那么环上所述对象的引用次数都肯定不可能减为0那么也就不会被删除，为了解决这个问题引入了weak_ptr。</p>
+<h3 id="2-3-weak-ptr"><a href="#2-3-weak-ptr" class="headerlink" title="2.3 weak_ptr"></a>2.3 weak_ptr</h3><p>对weak_ptr起的作用，很多人有自己不同的理解，我理解的weak_ptr和shared_ptr的最大区别在于weak_ptr在指向一个对象的时候不会增加其引用计数，因此你可以用weak_ptr去指向一个对象并且在weak_ptr仍然指向这个对象的时候析构它，此时你再访问weak_ptr的时候，weak_ptr其实返回的会是一个空的shared_ptr。</p>
+<p>实际上，通常shared_ptr内部实现的时候维护的就不是一个引用计数，而是两个引用计数，一个表示strong reference，也就是用shared_ptr进行复制的时候进行的计数，一个是weak reference，也就是用weak_ptr进行复制的时候的计数。weak_ptr本身并不会增加strong reference的值，而strong reference降低到0，对象被自动析构。</p>
+<p>为什么要采取weak_ptr来解决刚才所述的环状引用的问题呢？需要注意的是环状引用的本质矛盾是不能通过任何程序设计语言的方式来打破的，为了解决环状引用，第一步首先得打破环，也就是得告诉C++，这个环上哪一个引用是最弱的，是可以被打破的，因此在一个环上只要把原来的某一个shared_ptr改成weak_ptr，实质上这个环就可以被打破了，原有的环状引用带来的无法析构的问题也就随之得到了解决。</p>
+<p>weak_ptr是用来解决shared_ptr相互引用时的死锁问题,如果说两个shared_ptr相互引用,那么这两个指针的引用计数永远不可能下降为0,资源永远不会释放。它是对对象的一种弱引用，不会增加对象的引用计数，和shared_ptr之间可以相互转化，shared_ptr可以直接赋值给它，它可以通过调用lock函数来获得shared_ptr。</p>
+<figure class="highlight plain"><figcaption><span>.src-C++&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">class B;</div><div class="line">class A</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">    shared_ptr&lt;B&gt; pb_;</div><div class="line">    ~A()</div><div class="line">    &#123;</div><div class="line">        cout&lt;&lt;&quot;A delete\n&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">class B</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">    shared_ptr&lt;A&gt; pa_;</div><div class="line">    ~B()</div><div class="line">    &#123;</div><div class="line">        cout&lt;&lt;&quot;B delete\n&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">void fun()</div><div class="line">&#123;</div><div class="line">    shared_ptr&lt;B&gt; pb(new B());</div><div class="line">    shared_ptr&lt;A&gt; pa(new A());</div><div class="line">    pb-&gt;pa_ = pa;</div><div class="line">    pa-&gt;pb_ = pb;</div><div class="line">    cout&lt;&lt;pb.use_count()&lt;&lt;endl;</div><div class="line">    cout&lt;&lt;pa.use_count()&lt;&lt;endl;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    fun();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/img/shared_ptr.png" alt="智能指针循环计数"></p>
+<p>可以看到fun函数中pa ，pb之间互相引用，两个资源的引用计数为2，当要跳出函数时，智能指针pa，pb析构时两个资源引用计数会减一，但是两者引用计数还是为1，导致跳出函数时资源没有被释放（A B的析构函数没有被调用），如果把其中一个改为weak_ptr就可以了，我们把类A里面的shared_ptr\<b\> pb_; 改为weak_ptr\<b\> pb_; 运行结果如下，这样的话，资源B的引用开始就只有1，当pb析构时，B的计数变为0，B得到释放，B释放的同时也会使A的计数减一，同时pa析构时使A的计数减一，那么A的计数为0，A得到释放。</b\></b\></p>
+<h2 id="3-简单实现"><a href="#3-简单实现" class="headerlink" title="3 简单实现"></a>3 简单实现</h2><p>我们定义一个_counter类来记录引用次数，把_counter类的所有成员设定为private，因为其他的类型并不需要访问_counter，只有SmartPointer对其进行操作就行了，SmartPointer将设为其友元类。</p>
+<figure class="highlight plain"><figcaption><span>.src-C++&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class _counter&#123;</div><div class="line">    template&lt;typename T&gt; friend class SmartPointer;</div><div class="line"></div><div class="line">    _counter(int u):use(u)&#123;&#125;</div><div class="line"></div><div class="line">    ~_counter()&#123;&#125;</div><div class="line">    int use;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在SmartPointer类中，保留_counter的指针。</p>
+<figure class="highlight plain"><figcaption><span>.src-C++&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">template&lt;typename T&gt;</div><div class="line">class SmartPointer &#123;</div><div class="line">public:</div><div class="line">    SmartPointer(T *t): pc(new _counter(1))&#123;</div><div class="line">        cout&lt;&lt;&quot;SmartPointer copy invoked use is: &quot; &lt;&lt; pc-&gt;use&lt;&lt;endl;</div><div class="line">        this-&gt;pt = t;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    SmartPointer(SmartPointer&lt;T&gt; &amp;rhs)&#123;</div><div class="line">        this-&gt;pc = rhs.pc;</div><div class="line">        this-&gt;pt = rhs.pt;</div><div class="line">        this-&gt;pc-&gt;use++;</div><div class="line">        cout&lt;&lt;&quot;SmartPointer copy invoked use is: &quot;&lt;&lt; pc-&gt;use&lt;&lt;endl;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ~SmartPointer()&#123;</div><div class="line">        pc-&gt;use--;</div><div class="line">        cout&lt;&lt;&quot;SmartPointer::~SmartPointer() invoded use is: &quot;&lt;&lt;pc-&gt;use&lt;&lt;endl;</div><div class="line">        if(pc-&gt;use == 0)&#123;</div><div class="line">            delete pt;</div><div class="line">            delete pc;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    SmartPointer&lt;T&gt;&amp; operator=(SmartPointer&lt;T&gt; rhs)&#123;</div><div class="line">        if(rhs == *this)&#123;</div><div class="line">            return *this;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        this-&gt;pt = rhs.pt;</div><div class="line">        this-&gt;pc = rhs.pc;</div><div class="line">        this-&gt;pc-&gt;use++;</div><div class="line">        cout &lt;&lt; &quot;SmartPointer::operator=() invoked use is &quot; &lt;&lt; pc-&gt;use &lt;&lt; endl;</div><div class="line">        return *this;</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    T *pt;</div><div class="line">    _counter *pc;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>例如：我们有一个HasPtr类，其类成员中有一个为指针*p。</p>
+<figure class="highlight plain"><figcaption><span>.src-C++&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class HasPtr &#123;</div><div class="line">public :</div><div class="line">    HasPtr(int val):value(val), p(new int(3))&#123;</div><div class="line">        cout &lt;&lt;&quot;HasPtr::HasPtr() invoked&quot;&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ~HasPtr()&#123;delete p; cout&lt;&lt;&quot;HasPtr::~HasPtr() invoded&quot; &lt;&lt;endl;&#125;</div><div class="line"></div><div class="line">private:</div><div class="line">    int *p;</div><div class="line">    int value;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight plain"><figcaption><span>.src-C++&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">    HasPtr *php = new HasPtr(3);</div><div class="line">    cout&lt;&lt;&quot;---1&quot;&lt;&lt;endl;</div><div class="line">    SmartPointer&lt;HasPtr&gt; psp(php);</div><div class="line">    cout&lt;&lt;&quot;---2&quot;&lt;&lt;endl;</div><div class="line">    SmartPointer&lt;HasPtr&gt; npsp(psp);</div><div class="line">    cout&lt;&lt;&quot;---3&quot;&lt;&lt;endl;</div><div class="line">    SmartPointer&lt;HasPtr&gt; nnpsp = npsp;</div><div class="line">    cout&lt;&lt;&quot;---4&quot;&lt;&lt;endl;</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/img/test.png" alt=""></p>
+<h2 id="4-如何选择智能指针"><a href="#4-如何选择智能指针" class="headerlink" title="4 如何选择智能指针"></a>4 如何选择智能指针</h2><p>如果程序要使用多个指向同一个对象的指针，应选择shared_ptr。这样的情况包括：</p>
+<ul>
+<li>有一个指针数组，并使用一些辅助指针来标示特定的元素，如最大的元素和最小的元素；</li>
+<li>两个对象包含都指向第三个对象的指针；</li>
+<li>STL容器包含指针。很多STL算法都支持复制和赋值操作，这些操作可用于shared_ptr，但不能用于unique_ptr（编译器发出warning）和auto_ptr（行为不确定）。如果你的编译器没有提供shared_ptr，可使用Boost库提供的shared_ptr。</li>
+</ul>
+<h2 id="5-参考"><a href="#5-参考" class="headerlink" title="5 参考"></a>5 参考</h2><ul>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88" target="_blank" rel="external">智能指针</a></li>
+<li><a href="http://www.cnblogs.com/bigwangdi/archive/2013/06/15/3138123.html" target="_blank" rel="external">http://www.cnblogs.com/bigwangdi/archive/2013/06/15/3138123.html</a></li>
+</ul>
+<p>/home/hujd/project/org/blog/smartpointer.html</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wechat-qcode.jpg" alt="JasonThink wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-stl/" rel="tag">#C++,stl</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/24/2015-08-24-linux-skill/" rel="next" title="linux实用技巧">
+                <i class="fa fa-chevron-left"></i> linux实用技巧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/15/android_import_so/" rel="prev" title="ubuntu Android studio中引入so文件的方法">
+                ubuntu Android studio中引入so文件的方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/10/smartpointer/"
+     data-title="智能指针解析与实现"
+     data-content=""
+     data-url="http://hujiandong.com/2015/09/10/smartpointer/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/10/smartpointer/"
+           data-title="智能指针解析与实现" data-url="http://hujiandong.com/2015/09/10/smartpointer/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/5361486?v=3&s=460"
+               alt="JasonThink" />
+          <p class="site-author-name" itemprop="name">JasonThink</p>
+          <p class="site-description motion-element" itemprop="description">胡建东的个人站点</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jasonim" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是智能指针"><span class="nav-number">1.</span> <span class="nav-text">1 什么是智能指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-智能指针有哪些"><span class="nav-number">2.</span> <span class="nav-text">2 智能指针有哪些</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-scoped-ptr"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 scoped_ptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-shared-ptr"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 shared_ptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-weak-ptr"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 weak_ptr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-简单实现"><span class="nav-number">3.</span> <span class="nav-text">3 简单实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-如何选择智能指针"><span class="nav-number">4.</span> <span class="nav-text">4 如何选择智能指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-参考"><span class="nav-number">5.</span> <span class="nav-text">5 参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JasonThink</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jasonim"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("H9mD0w4jrikMi4iHPcVvTycJ-gzGzoHsz#<app_id>", "B504ioHpQDe9l3EdrNc3xAue#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

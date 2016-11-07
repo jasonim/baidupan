@@ -1,0 +1,846 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,java学习系列," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JasonThink's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="IO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一枚c/c++程序员java探索－io">
+<meta property="og:url" content="http://hujiandong.com/2016/01/24/learning_java_io/index.html">
+<meta property="og:site_name" content="JasonThink's Blog">
+<meta property="og:description" content="IO">
+<meta property="og:updated_time" content="2016-11-07T08:48:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一枚c/c++程序员java探索－io">
+<meta name="twitter:description" content="IO">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://hujiandong.com/2016/01/24/learning_java_io/"/>
+
+
+  <title> 一枚c/c++程序员java探索－io | JasonThink's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bce6c38410e11063877362ffaf8f9bdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JasonThink's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一枚c/c++程序员java探索－io
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-24T15:30:16+08:00" content="2016-01-24">
+              2016-01-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/24/learning_java_io/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/learning_java_io/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/01/24/learning_java_io/" class="leancloud_visitors" data-flag-title="一枚c/c++程序员java探索－io">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><p>File类只用于表示文件（目录）的信息（名称、大小等），不能用于文件内容的访问。</p>
+<p>RandomAccessFile java提供的对文件内容的访问，既可以读文件，也可以写文件。<br>RandomAccessFile支持随机访问文件，可以访问文件的任意位置</p>
+<p>分为下面几步:</p>
+<ol>
+<li>java文件模型<br>在硬盘上的文件是byte byte byte存储的,是数据的集合</li>
+<li>打开文件<br>有两种模式”rw”(读写)  “r”（只读)<br>RandomAccessFile raf = new RandomeAccessFile(file,”rw”)<br>文件指针，打开文件时指针在开头 pointer = 0;</li>
+<li>写方法<br> raf.write(int)—&gt;只写一个字节（后8位),同时指针指向下一个位置，准备再次写入</li>
+<li>读方法<br>int b = raf.read()—&gt;读一个字节</li>
+<li>文件读写完成以后一定要关闭</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">      File demo = <span class="keyword">new</span> File(<span class="string">"test"</span>);</div><div class="line"><span class="keyword">if</span>(!demo.exists()) &#123;</div><div class="line">          demo.mkdir();</div><div class="line">      &#125;</div><div class="line">File file = <span class="keyword">new</span> File(demo,<span class="string">"test"</span>);</div><div class="line"><span class="keyword">if</span>(!file.exists()) &#123;</div><div class="line">	file.createNewFile();</div><div class="line">      &#125;</div><div class="line"><span class="comment">//打开文件，进行随机读写</span></div><div class="line">RandomAccessFile accessFile = <span class="keyword">new</span> RandomAccessFile(file, <span class="string">"rw"</span>);</div><div class="line"><span class="comment">/*序列化*/</span></div><div class="line"><span class="keyword">int</span> i = <span class="number">0x7ffffff</span>;</div><div class="line">accessFile.write(i &gt;&gt; <span class="number">24</span>);</div><div class="line">accessFile.write(i &gt;&gt; <span class="number">16</span>);</div><div class="line">accessFile.write(i &gt;&gt; <span class="number">8</span>);</div><div class="line">accessFile.write(i);</div><div class="line">System.out.println(raf.getFilePointer());</div><div class="line"></div><div class="line"><span class="comment">/*反序列化*/</span></div><div class="line">accessFile.seek(<span class="number">0</span>);</div><div class="line"><span class="keyword">int</span> b = accessFile.read();</div><div class="line">i = i | (b &lt;&lt; <span class="number">24</span>);</div><div class="line">b = accessFile.read();</div><div class="line">i = i | (b &lt;&lt; <span class="number">16</span>);</div><div class="line">b = accessFile.read();</div><div class="line">i = i | (b &lt;&lt; <span class="number">8</span>);</div><div class="line">b = accessFile.read();</div><div class="line">i = i | b;</div><div class="line">System.out.println(Integer.toHexString(i));</div><div class="line">      accessFile.close();</div></pre></td></tr></table></figure>
+<p>RandomAccessFile提供基本类型的读写方法，可以将基本类型数据序列化到文件或者将文件内容反序列化为数据</p>
+<h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><h2 id="InputStream、OutputStream"><a href="#InputStream、OutputStream" class="headerlink" title="InputStream、OutputStream"></a>InputStream、OutputStream</h2><pre><code>InputStream抽象了应用程序读取数据的方式
+OutputStream抽象了应用程序写出数据的方式 
+EOF = End   读到-1就读到结尾
+</code></pre><h3 id="输入流基本方法"><a href="#输入流基本方法" class="headerlink" title="输入流基本方法"></a>输入流基本方法</h3><p>   int  b = in.read();读取一个字节无符号填充到int低八位.-1是 EOF<br>   in.read(byte[] buf)<br>   in.read(byte[] buf,int start,int size)</p>
+<h3 id="输出流基本方法"><a href="#输出流基本方法" class="headerlink" title="输出流基本方法"></a>输出流基本方法</h3><p>  out.write(int b)  写出一个byte到流，b的低8位<br>  out.write(byte[] buf)将buf字节数组都写入到流<br>  out.write(byte[] buf,int start,int size)</p>
+<h2 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h2><p> 具体实现了在文件上读取数据</p>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><p>实现了向文件中写出byte数据的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 读取指定文件内容，按照16进制输出到控制台</div><div class="line"> * 并且每输出10个byte换行</div><div class="line"> * <span class="doctag">@param</span> fileName</div><div class="line"> * 单字节读取不适合大文件，大文件效率很低</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printHex</span><span class="params">(String fileName)</span><span class="keyword">throws</span> IOException</span>&#123;</div><div class="line">	<span class="comment">//把文件作为字节流进行读操作</span></div><div class="line">	FileInputStream in = <span class="keyword">new</span> FileInputStream(fileName);</div><div class="line">	<span class="keyword">int</span> b ;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>((b = in.read())!=-<span class="number">1</span>)&#123;</div><div class="line">		<span class="keyword">if</span>(b &lt;= <span class="number">0xf</span>)&#123;</div><div class="line">			<span class="comment">//单位数前面补0</span></div><div class="line">			System.out.print(<span class="string">"0"</span>);</div><div class="line">		&#125;</div><div class="line">		System.out.print(Integer.toHexString(b)+<span class="string">"  "</span>);</div><div class="line">		<span class="keyword">if</span>(i++%<span class="number">10</span>==<span class="number">0</span>)&#123;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	in.close();</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 批量读取，对大文件而言效率高，也是我们最常用的读文件的方式</div><div class="line"> * <span class="doctag">@param</span> fileName</div><div class="line"> * <span class="doctag">@throws</span> IOException</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printHexByByteArray</span><span class="params">(String fileName)</span><span class="keyword">throws</span> IOExceptio)</span>&#123;</div><div class="line">	FileInputStream in = <span class="keyword">new</span> FileInputStream(fileName);</div><div class="line">	<span class="keyword">byte</span>[] buf = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8</span> * <span class="number">1024</span>];</div><div class="line">	<span class="comment">/*从in中批量读取字节，放入到buf这个字节数组中，</span></div><div class="line">	 * 从第0个位置开始放，最多放buf.length个 </div><div class="line">	 * 返回的是读到的字节的个数</div><div class="line">	*/</div><div class="line">	<span class="comment">/*int bytes = in.read(buf,0,buf.length);//一次性读完，说明字节数组足够大</span></div><div class="line">	int j = 1; </div><div class="line">	for(int i = 0; i &lt; bytes;i++)&#123;</div><div class="line">		System.out.print(Integer.toHexString(buf[i] &amp; 0xff)+"  ");</div><div class="line">		if(j++%10==0)&#123;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;*/</div><div class="line">  <span class="keyword">int</span> bytes = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> j = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span>((bytes = in.read(buf,<span class="number">0</span>,buf.length))!=-<span class="number">1</span>)&#123;</div><div class="line">	  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; bytes;i++)&#123;</div><div class="line">		  System.out.print(Integer.toHexString(buf[i] &amp; <span class="number">0xff</span>)+<span class="string">"  "</span>);</div><div class="line">		  <span class="keyword">if</span>(j++%<span class="number">10</span>==<span class="number">0</span>)&#123;</div><div class="line">			  System.out.println();</div><div class="line">		  &#125;</div><div class="line">	  &#125;</div><div class="line">  &#125;</div><div class="line">  in.close();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="DataOutputStream-DataInputStream"><a href="#DataOutputStream-DataInputStream" class="headerlink" title="DataOutputStream/DataInputStream"></a>DataOutputStream/DataInputStream</h3><pre><code>对&quot;流&quot;功能的扩展，可以更加方面的读取int,long，字符等类型数据
+DataOutputStream
+writeInt()/writeDouble()/writeUTF()
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">//</span></div><div class="line">   DataInputStream dis = <span class="keyword">new</span> DataInputStream(</div><div class="line"><span class="keyword">new</span> FileInputStream(file));</div><div class="line"><span class="keyword">int</span> i = dis.readInt();</div><div class="line">System.out.println(i);</div><div class="line">i = dis.readInt();</div><div class="line">System.out.println(i);</div><div class="line"><span class="keyword">long</span> l = dis.readLong();</div><div class="line">System.out.println(l);</div><div class="line"><span class="keyword">double</span> d = dis.readDouble();</div><div class="line">System.out.println(d);</div><div class="line">String s = dis.readUTF();</div><div class="line">System.out.println(s);</div><div class="line"></div><div class="line">   dis.close();</div><div class="line">   <span class="comment">//</span></div><div class="line">   DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(</div><div class="line">	<span class="keyword">new</span> FileOutputStream(file));</div><div class="line">dos.writeInt(<span class="number">10</span>);</div><div class="line">dos.writeInt(-<span class="number">10</span>);</div><div class="line">dos.writeLong(<span class="number">10l</span>);</div><div class="line">dos.writeDouble(<span class="number">10.5</span>);</div><div class="line"><span class="comment">//采用utf-8编码写出</span></div><div class="line">dos.writeUTF(<span class="string">"中国"</span>);</div><div class="line"><span class="comment">//采用utf-16be编码写出</span></div><div class="line">dos.writeChars(<span class="string">"中国"</span>);</div><div class="line">dos.close();</div></pre></td></tr></table></figure>
+<h3 id="BufferedInputStream-BufferedOutputStream"><a href="#BufferedInputStream-BufferedOutputStream" class="headerlink" title="BufferedInputStream/BufferedOutputStream"></a>BufferedInputStream/BufferedOutputStream</h3><p> 这两个流类位IO提供了带缓冲区的操作，一般打开文件进行写入<br> 或读取操作时，都会加上缓冲，这种流模式提高了IO的性能<br> 从应用程序中把输入放入文件，相当于将一缸水倒入到另一个缸中:<br> FileOutputStream: write()方法相当于一滴一滴地把水“转移”过去<br> DataOutputStream: writeXxx()方法会方便一些，相当于一瓢一瓢把水“转移”过去<br> BufferedOutputStream: write方法更方便，相当于一飘一瓢先放入桶中，再从桶中倒入到另一个缸中，性能提高了</p>
+<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h1><h2 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h2><p> java的文本(char)是16位无符号整数，是字符的unicode编码（双字节编码)<br> 文件是byte byte byte …的数据序列<br> 文本文件是文本(char)序列按照某种编码方案(utf-8,utf-16be,gbk)序列化为byte的存储结果</p>
+<h2 id="字符流-Reader-Writer"><a href="#字符流-Reader-Writer" class="headerlink" title="字符流(Reader Writer)"></a>字符流(Reader Writer)</h2><p>  操作的是文本文本文件<br>  字符的处理，一次处理一个字符<br>  字符的底层任然是基本的字节序列<br>  字符流的基本实现<br>   InputStreamReader   完成byte流解析为char流,按照编码解析<br>   OutputStreamWriter  提供char流到byte流，按照编码处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"e:\\javaio\\utf8.txt"</span>);</div><div class="line">InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(in,<span class="string">"utf-8"</span>);<span class="comment">//默认项目的编码,操作的时候，要写文件本身的编码格式</span></div><div class="line">	</div><div class="line">FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"e:\\javaio\\utf81.txt"</span>);</div><div class="line">OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(out,<span class="string">"utf-8"</span>);</div><div class="line"><span class="comment">/*int c ;</span></div><div class="line">while((c = isr.read())!=-1)&#123;</div><div class="line">	System.out.print((char)c);</div><div class="line">&#125;*/</div><div class="line"><span class="keyword">char</span>[] buffer = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">8</span>*<span class="number">1024</span>];</div><div class="line"><span class="keyword">int</span> c;</div><div class="line"><span class="comment">/*批量读取，放入buffer这个字符数组，从第0个位置开始放置，最多放buffer.length个</span></div><div class="line">  返回的是读到的字符的个数</div><div class="line">*/</div><div class="line"><span class="keyword">while</span>(( c = isr.read(buffer,<span class="number">0</span>,buffer.length))!=-<span class="number">1</span>)&#123;</div><div class="line">	String s = <span class="keyword">new</span> String(buffer,<span class="number">0</span>,c);</div><div class="line">	System.out.print(s);</div><div class="line">	osw.write(buffer,<span class="number">0</span>,c);</div><div class="line">	osw.flush();</div><div class="line">&#125;</div><div class="line">isr.close();</div><div class="line">osw.close();</div></pre></td></tr></table></figure>
+<h2 id="FileReader-FileWriter"><a href="#FileReader-FileWriter" class="headerlink" title="FileReader/FileWriter"></a>FileReader/FileWriter</h2><p>   字符流的过滤器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//对文件进行读写操作 </span></div><div class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(</div><div class="line">		<span class="keyword">new</span> InputStreamReader(</div><div class="line">				<span class="keyword">new</span> FileInputStream(<span class="string">"e:\\javaio\\test1.txt"</span>)));</div><div class="line"><span class="comment">/*BufferedWriter bw = new BufferedWriter(</span></div><div class="line">		new OutputStreamWriter(</div><div class="line">				new FileOutputStream("e:\\javaio\\test2.txt")));*/</div><div class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(<span class="string">"e:\\javaio\\test2.txt"</span>);</div><div class="line"><span class="comment">//PrintWriter pw1 = new PrintWriter(outputStream,boolean autoFlush);</span></div><div class="line">String line ;</div><div class="line"><span class="keyword">while</span>((line = br.readLine())!=<span class="keyword">null</span>)&#123;</div><div class="line">	System.out.println(line);<span class="comment">//一次读一行，并不能识别换行</span></div><div class="line">	<span class="comment">/*bw.write(line);</span></div><div class="line">	//单独写出换行操作</div><div class="line">	bw.newLine();//换行操作</div><div class="line">	bw.flush();*/</div><div class="line">	pw.println(line);</div><div class="line">	pw.flush();</div><div class="line">&#125;</div><div class="line">br.close();</div><div class="line"><span class="comment">//bw.close();</span></div><div class="line">pw.close();</div></pre></td></tr></table></figure></p>
+<h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><p>readLine 一次读一行</p>
+<h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><p>写一行</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wechat-qcode.jpg" alt="JasonThink wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/java学习系列/" rel="tag">#java学习系列</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/12/java_base_question_summary/" rel="next" title="java基础知识疑难问题总结">
+                <i class="fa fa-chevron-left"></i> java基础知识疑难问题总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/28/learning_java_collection/" rel="prev" title="一枚c/c++程序员java探索－容器">
+                一枚c/c++程序员java探索－容器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/01/24/learning_java_io/"
+     data-title="一枚c/c++程序员java探索－io"
+     data-content=""
+     data-url="http://hujiandong.com/2016/01/24/learning_java_io/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/24/learning_java_io/"
+           data-title="一枚c/c++程序员java探索－io" data-url="http://hujiandong.com/2016/01/24/learning_java_io/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/5361486?v=3&s=460"
+               alt="JasonThink" />
+          <p class="site-author-name" itemprop="name">JasonThink</p>
+          <p class="site-description motion-element" itemprop="description">胡建东的个人站点</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jasonim" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File类"><span class="nav-number">1.</span> <span class="nav-text">File类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字节流"><span class="nav-number">2.</span> <span class="nav-text">字节流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#InputStream、OutputStream"><span class="nav-number">2.1.</span> <span class="nav-text">InputStream、OutputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入流基本方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">输入流基本方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出流基本方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">输出流基本方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileInputStream"><span class="nav-number">2.2.</span> <span class="nav-text">FileInputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FileOutputStream"><span class="nav-number">2.2.1.</span> <span class="nav-text">FileOutputStream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataOutputStream-DataInputStream"><span class="nav-number">2.2.2.</span> <span class="nav-text">DataOutputStream/DataInputStream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BufferedInputStream-BufferedOutputStream"><span class="nav-number">2.2.3.</span> <span class="nav-text">BufferedInputStream/BufferedOutputStream</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符流"><span class="nav-number">3.</span> <span class="nav-text">字符流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编码问题"><span class="nav-number">3.1.</span> <span class="nav-text">编码问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符流-Reader-Writer"><span class="nav-number">3.2.</span> <span class="nav-text">字符流(Reader Writer)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileReader-FileWriter"><span class="nav-number">3.3.</span> <span class="nav-text">FileReader/FileWriter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BufferedReader"><span class="nav-number">3.4.</span> <span class="nav-text">BufferedReader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BufferedWriter"><span class="nav-number">3.5.</span> <span class="nav-text">BufferedWriter</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JasonThink</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jasonim"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("H9mD0w4jrikMi4iHPcVvTycJ-gzGzoHsz#<app_id>", "B504ioHpQDe9l3EdrNc3xAue#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

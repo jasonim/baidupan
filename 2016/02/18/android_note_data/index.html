@@ -1,0 +1,870 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android系列," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JasonThink's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="android笔记-数据篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android笔记-数据篇">
+<meta property="og:url" content="http://hujiandong.com/2016/02/18/android_note_data/index.html">
+<meta property="og:site_name" content="JasonThink's Blog">
+<meta property="og:description" content="android笔记-数据篇">
+<meta property="og:updated_time" content="2016-11-07T08:48:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android笔记-数据篇">
+<meta name="twitter:description" content="android笔记-数据篇">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://hujiandong.com/2016/02/18/android_note_data/"/>
+
+
+  <title> android笔记-数据篇 | JasonThink's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bce6c38410e11063877362ffaf8f9bdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JasonThink's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                android笔记-数据篇
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-18T19:30:16+08:00" content="2016-02-18">
+              2016-02-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/18/android_note_data/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/18/android_note_data/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/02/18/android_note_data/" class="leancloud_visitors" data-flag-title="android笔记-数据篇">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Android 的四种数据存储方式：</p>
+<ol>
+<li>SharedPreferences</li>
+<li>SQLLite</li>
+<li>Content Provider</li>
+<li>File</li>
+<li>SharedPreferences</li>
+</ol>
+<h1 id="SharedPreferences"><a href="#SharedPreferences" class="headerlink" title="SharedPreferences"></a>SharedPreferences</h1><p>它是一种轻量的数据存储方式，本质是基于xml文件存储key-value，通常用来存储一些简单的配置信息。<br>SharedPreferences对象本身只对获取数据而不支持存储和修改，存储修改是通过Editor对象实现<br>实现SharedPreferences存储的步骤如下：</p>
+<ol>
+<li>获取SharedPreferences对象</li>
+<li>获取SharedPreferences.Editor对象</li>
+<li>通过Editor接口的putXxx方法保存key-value对其中xxx表示不同的数据类型</li>
+<li>通过Editor接口的apply(以前commit)方法保存key-value对</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">SharedPreferences pref = getSharedPreferences(<span class="string">"myPref"</span>, MODE_PRIVATE);</div><div class="line">SharedPreferences.Editor edit = pref.edit();</div><div class="line">edit.putString(<span class="string">"name"</span>, <span class="string">"jason"</span>);</div><div class="line">edit.putInt(<span class="string">"age"</span>, <span class="number">28</span>);</div><div class="line">edit.putLong(<span class="string">"time"</span>, System.currentTimeMillis());</div><div class="line">edit.apply();<span class="comment">//保存数据，建议不要用commit</span></div><div class="line">edit.remove(<span class="string">"time"</span>);</div><div class="line">edit.apply();</div><div class="line"></div><div class="line"><span class="comment">//获取数据</span></div><div class="line">System.out.println(pref.getString(<span class="string">"name"</span>, <span class="string">"jason"</span>));</div><div class="line">System.out.println(pref.getInt(<span class="string">"age"</span>, <span class="number">0</span>));</div></pre></td></tr></table></figure>
+<h1 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h1><h2 id="SQLite简介"><a href="#SQLite简介" class="headerlink" title="SQLite简介"></a>SQLite简介</h2><p>维基定义：</p>
+<blockquote>
+<p>SQLite （英语发音：/ˌɛskjuːɛlˈlaɪt/[2] or 英语发音：/ˈsiːkwəl.laɪt/[3]）是遵守ACID的关系数据库管理系统，它包含在一个相对小的C程序库中。与许多其它数据库管理系统不同，SQLite不是一个客户端/服务器结构的数据库引擎，而是被集成在用户程序中。</p>
+<p>SQLite遵守ACID，实现了大多数SQL标准。它使用动态的、弱类型的SQL语法。[4]它作为嵌入式数据库，是应用程序，如网页浏览器，在本地/客户端存储数据的常见选择。它可能是最广泛部署的数据库引擎，因为它正在被一些流行的浏览器、操作系统、嵌入式系统所使用[5]。同时，它有许多程序设计语言的语言绑定。</p>
+</blockquote>
+<p>特点：</p>
+<ul>
+<li>轻量级 一个动态库、单个文件</li>
+<li>独立性 没有依赖、无序安装</li>
+<li>隔离性 全部在一个文件中</li>
+<li>跨平台</li>
+<li>多语言接口 支持众多编程语言</li>
+<li>安全性 事务</li>
+</ul>
+<p>事务处理的安全性问题：</p>
+<ul>
+<li>通过数据库上的独占性和共享锁来实现独立事务处理</li>
+<li>多个进程可以在同一时间从同一数据库读取数据， 但只有一个可以写入数据。 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2>SQLite支持NULL、INTERGER、REAL、TEXT和BLOB数据类型 <h2 id="动态数据类型"><a href="#动态数据类型" class="headerlink" title="动态数据类型"></a>动态数据类型</h2>当某个值插入到数据库时，SQLite将会检查它的类型，如果该类型与关联的列不匹配，SQLite则会尝试将该值转换成该列的类型，如果不能转换，则该值将作为本身的类型存储<h2 id="差异性"><a href="#差异性" class="headerlink" title="差异性"></a>差异性</h2></li>
+<li>没有可用于SQLite的网络服务器、只能通过网络共享可能存在文件锁定或者性能问题</li>
+<li>只是提供数据库级别的锁定</li>
+<li>没有用户账号的概念，而是根据文件系统确定所有数据库的权限</li>
+</ul>
+<h2 id="android中如何使用SQLite"><a href="#android中如何使用SQLite" class="headerlink" title="android中如何使用SQLite"></a>android中如何使用SQLite</h2><h3 id="SQLiteDatabase"><a href="#SQLiteDatabase" class="headerlink" title="SQLiteDatabase"></a>SQLiteDatabase</h3><p>提供了一些管理SQLite数据库的类，提供创建，删除，执行SQL命令，并执行其他常见的数据库管理任务的方法，每个程序的数据库名字是唯一的。</p>
+<ol>
+<li>ContentValues values = new ContentValues(); </li>
+<li>values.put(“name”, “jason”); </li>
+<li>执行对应的sql操作</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">SQLiteDatabase db = openOrCreateDatabase(<span class="string">"user.db"</span>, MODE_PRIVATE, <span class="keyword">null</span>);</div><div class="line"><span class="comment">//通过内置方法操作数据库</span></div><div class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">values.put(<span class="string">"name"</span>, <span class="string">"jason"</span>);</div><div class="line">values.put(<span class="string">"sex"</span>, <span class="string">"male"</span>);</div><div class="line">values.put(<span class="string">"age"</span>, <span class="string">"28"</span>);</div><div class="line"></div><div class="line">db.insert(<span class="string">"usertb"</span>, <span class="keyword">null</span>, values);</div><div class="line"></div><div class="line">values.clear();</div><div class="line">values.put(<span class="string">"sex"</span>, <span class="string">"female"</span>);</div><div class="line">db.update(<span class="string">"usertab"</span>, values, <span class="string">"_id&gt;?"</span>, <span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>&#125;);<span class="comment">//将全部id&gt;3的人的性别改为女</span></div><div class="line">db.delete(<span class="string">"usertab"</span>, <span class="string">"name like ?"</span>, <span class="keyword">new</span> String[]&#123;<span class="string">"%j%"</span>&#125;);<span class="comment">//删除所有名字中带有j的人</span></div><div class="line"><span class="comment">//Cursor query = db.query("usertb", null, "_id&gt;?", new String[]&#123;"0"&#125;, null, null, "name");</span></div><div class="line"></div><div class="line">Cursor cursor = db.rawQuery(<span class="string">"select * from usertb"</span>, <span class="keyword">null</span>);</div><div class="line"><span class="keyword">if</span>(cursor != <span class="keyword">null</span>) &#123;</div><div class="line">    cursor.moveToFirst();</div><div class="line">    <span class="keyword">int</span> index = cursor.getColumnIndex(<span class="string">"_id"</span>);</div><div class="line">    <span class="keyword">while</span> (cursor.moveToNext()) &#123;</div><div class="line">        Log.i(<span class="string">"jason"</span>, String.valueOf(cursor.getInt(index)));</div><div class="line">    &#125;</div><div class="line">    cursor.close();</div><div class="line">&#125;</div><div class="line">db.close();</div></pre></td></tr></table></figure>
+<h3 id="TODO-SQLiteOpenHelper"><a href="#TODO-SQLiteOpenHelper" class="headerlink" title="TODO SQLiteOpenHelper"></a>TODO SQLiteOpenHelper</h3><p>用于管理创建和版本更新<br>一般是建立一个类的继承它，并重写onCreate()和onUpgrade()方法<br>getReadableDatabase() 创建或打开一个只读数据库<br>getWriteableDatabase() 创建或打开一个读写数据库</p>
+<h2 id="SQlite-性能优化"><a href="#SQlite-性能优化" class="headerlink" title="SQlite 性能优化"></a>SQlite 性能优化</h2><p><a href="http://droidyue.com/" target="_blank" rel="external">技术小黑屋</a>的一篇《Android中SQLite性能优化》写的不错，<a href="http://droidyue.com/blog/2015/12/13/android-sqlite-tuning/" target="_blank" rel="external">点击这里</a></p>
+<h1 id="TODO-File"><a href="#TODO-File" class="headerlink" title="TODO File"></a>TODO File</h1><h1 id="TODO-ContentProvider"><a href="#TODO-ContentProvider" class="headerlink" title="TODO ContentProvider"></a>TODO ContentProvider</h1><p>主要作用是进行数据共享，可以是不同进程、应用之间。</p>
+<h2 id="如何实现Content-Provider？"><a href="#如何实现Content-Provider？" class="headerlink" title="如何实现Content Provider？"></a>如何实现Content Provider？</h2><ol>
+<li>继承抽象类ContentProvider实现一系列针对于数据的增、删、改、查等方法</li>
+<li>需在AndroidMainfest.xml中完成对ContentProvider的注册 </li>
+<li>获取UriMatcher类</li>
+<li>使用ContentResolver操作ContentProvider中的数据</li>
+</ol>
+<p>当外部应用需要对ContentProvider中的数据进行添加、删除、修改和查询操作时，可以使用ContentResolver 类来完成<br>使用Activity提供的getContentResolver()方法获取ContentProvider对象 </p>
+<h2 id="系统提供的ContentProvider"><a href="#系统提供的ContentProvider" class="headerlink" title="系统提供的ContentProvider"></a>系统提供的ContentProvider</h2><p>联系人<br>短信读取<br>通话记录<br>多媒体 图像、音视频</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wechat-qcode.jpg" alt="JasonThink wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android系列/" rel="tag">#android系列</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/15/hongbao/" rel="next" title="过年抢红包一些感想">
+                <i class="fa fa-chevron-left"></i> 过年抢红包一些感想
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/21/book_review_framework/" rel="prev" title="书评：格局逆袭">
+                书评：格局逆袭 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/02/18/android_note_data/"
+     data-title="android笔记-数据篇"
+     data-content=""
+     data-url="http://hujiandong.com/2016/02/18/android_note_data/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/18/android_note_data/"
+           data-title="android笔记-数据篇" data-url="http://hujiandong.com/2016/02/18/android_note_data/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/5361486?v=3&s=460"
+               alt="JasonThink" />
+          <p class="site-author-name" itemprop="name">JasonThink</p>
+          <p class="site-description motion-element" itemprop="description">胡建东的个人站点</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jasonim" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SharedPreferences"><span class="nav-number">1.</span> <span class="nav-text">SharedPreferences</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLite"><span class="nav-number">2.</span> <span class="nav-text">SQLite</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLite简介"><span class="nav-number">2.1.</span> <span class="nav-text">SQLite简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">动态数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差异性"><span class="nav-number">2.4.</span> <span class="nav-text">差异性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android中如何使用SQLite"><span class="nav-number">2.5.</span> <span class="nav-text">android中如何使用SQLite</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQLiteDatabase"><span class="nav-number">2.5.1.</span> <span class="nav-text">SQLiteDatabase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TODO-SQLiteOpenHelper"><span class="nav-number">2.5.2.</span> <span class="nav-text">TODO SQLiteOpenHelper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQlite-性能优化"><span class="nav-number">2.6.</span> <span class="nav-text">SQlite 性能优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO-File"><span class="nav-number">3.</span> <span class="nav-text">TODO File</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO-ContentProvider"><span class="nav-number">4.</span> <span class="nav-text">TODO ContentProvider</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现Content-Provider？"><span class="nav-number">4.1.</span> <span class="nav-text">如何实现Content Provider？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统提供的ContentProvider"><span class="nav-number">4.2.</span> <span class="nav-text">系统提供的ContentProvider</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JasonThink</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jasonim"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("H9mD0w4jrikMi4iHPcVvTycJ-gzGzoHsz#<app_id>", "B504ioHpQDe9l3EdrNc3xAue#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
