@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:06:06.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:08:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -367,7 +367,7 @@
 <li>mock(toMockObject.class)</li>
 <li>注解的方式 @Mock，注意要利用注解， 首先要告诉 Mockito 框架， 可以<code>@Rule public MockitoRule mockitoRule = MockitoJUnit.rule);</code> 或者它的实现<code>MockitoAnnotations.initMocks(target);</code></li>
 </ul>
-<h3 id="误区一"><a href="#误区一" class="headerlink" title="误区一"></a>误区一</h3><p>上面的例子我们进行修改 ==&gt; 为不同于上面的地方，如下:</p>
+<h3 id="误区一"><a href="#误区一" class="headerlink" title="误区一"></a>误区一</h3><p>上面的例子我们进行修改 ==&gt; 为不同于上面的地方，如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//mock creation List</span></div><div class="line">mock(List.class);</div><div class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"><span class="comment">//using mock object - it does not throw any "unexpected interaction" exception</span></div><div class="line">list.add(<span class="string">"one"</span>);</div><div class="line"><span class="comment">// selective, explicit, highly readable verification</span></div><div class="line">verify(list).add(<span class="string">"one"</span>);</div></pre></td></tr></table></figure></p>
 
       
     </div>
