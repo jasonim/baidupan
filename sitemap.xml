@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2016/11/07/android-unit-test-mock/</loc>
+    
+    <lastmod>2016-11-07T11:38:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/04/10/how_code_auto_test/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
+    <loc>http://hujiandong.com/about/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/about/index.html</loc>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -59,13 +66,6 @@
   
   <url>
     <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/06/09/rich-dad-poor-dad/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
+    <loc>http://hujiandong.com/2016/06/09/rich-dad-poor-dad/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -353,6 +353,13 @@
   
   <url>
     <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     

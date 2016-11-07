@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="依赖注入," />
+  <meta name="keywords" content="Android,单元测试," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="使用Dagger 2进行依赖注入">
+<meta name="description" content="Android 单元测试-Mockito">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Dagger 2进行依赖注入">
-<meta property="og:url" content="http://hujiandong.com/2016/05/10/android-dagger/index.html">
+<meta property="og:title" content="Android 单元测试-Mockito">
+<meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
-<meta property="og:description" content="使用Dagger 2进行依赖注入">
-<meta property="og:updated_time" content="2016-11-07T08:48:27.000Z">
+<meta property="og:description" content="Android 单元测试-Mockito">
+<meta property="og:updated_time" content="2016-11-07T11:38:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Dagger 2进行依赖注入">
-<meta name="twitter:description" content="使用Dagger 2进行依赖注入">
+<meta name="twitter:title" content="Android 单元测试-Mockito">
+<meta name="twitter:description" content="Android 单元测试-Mockito">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://hujiandong.com/2016/05/10/android-dagger/"/>
+  <link rel="canonical" href="http://hujiandong.com/2016/11/07/android-unit-test-mock/"/>
 
 
-  <title> 使用Dagger 2进行依赖注入 | JasonThink's Blog </title>
+  <title> Android 单元测试-Mockito | JasonThink's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
             
             
               
-                使用Dagger 2进行依赖注入
+                Android 单元测试-Mockito
               
             
           </h1>
@@ -284,8 +284,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T19:30:16+08:00" content="2016-05-10">
-              2016-05-10
+            <time itemprop="dateCreated" datetime="2016-11-07T19:22:29+08:00" content="2016-11-07">
+              2016-11-07
             </time>
           </span>
 
@@ -298,8 +298,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -314,8 +314,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/10/android-dagger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/android-dagger/" itemprop="commentsCount"></span>
+                <a href="/2016/11/07/android-unit-test-mock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/07/android-unit-test-mock/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,7 +325,7 @@
 
           
           
-             <span id="/2016/05/10/android-dagger/" class="leancloud_visitors" data-flag-title="使用Dagger 2进行依赖注入">
+             <span id="/2016/11/07/android-unit-test-mock/" class="leancloud_visitors" data-flag-title="Android 单元测试-Mockito">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -347,39 +347,7 @@
       
 
       
-        <p>当我们写代码时总会遇见好多依赖关系，为了解决依赖达到代码之间的低耦合，通常我们会运用依赖注入技术。通常如下两种方式解决依赖：</p>
-<blockquote>
-<p>静态依赖注入<br>动态依赖注入（java中通过注解方式实现）<br>本着what-how-why原则去进行分析问题、解决问题。</p>
-</blockquote>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>依赖注入的原理网上有很多，大家可以看看，我找了两篇，感觉写不错。</p>
-<p><a href="http://martinfowler.com/articles/injection.html" target="_blank" rel="external">martinfowler</a></p>
-<p><a href="http://codethink.me/2015/08/01/dependency-injection-theory/" target="_blank" rel="external">codethink</a></p>
-<h1 id="dagger"><a href="#dagger" class="headerlink" title="dagger"></a>dagger</h1><p>在 Android 上比较流行的有 RoboGuice、<a href="http://google.github.io/dagger/" target="_blank" rel="external">Dagger</a> 等。其中 Dagger 是我现在正在项目中使用的。</p>
-<p><a href="http://google.github.io/dagger/" target="_blank" rel="external">Dagger</a>已经加入Google I/O, 是Square开发的依赖注入库, 发布2.0版本. Dagger表示有向非循环图(Directed Acyclic Graph, DAGger). 好处和优点有很多, 参考, 所有优秀的开源库, 本质上都是让程序更加清晰, 编写更加容易. 让我们来看看怎么使用?</p>
-<p>dagger2主要包含inject, module, component三个部分, 即:<br>Inject, 依赖注入dependency injection, 把定义的类注入声明.<br>Module, 模块, 提供若干类, 在依赖注入中使用.<br>Component, 组件, 注册若干模块至项目中.</p>
-<h1 id="show-me-the-code"><a href="#show-me-the-code" class="headerlink" title="show me the code"></a>show me the code</h1><p>我想现在有好多疑问，那就让我们行动起来看看怎么使用<strong>dagger</strong>。</p>
-<h2 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h2><p><strong>build.gradle</strong> 配置如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'com.neenbedankt.android-apt'</span></div><div class="line"><span class="comment">//project gradle </span></div><div class="line">buildscript &#123;</div><div class="line">  repositories &#123;</div><div class="line">    jcenter()</div><div class="line">  &#125;</div><div class="line">  dependencies &#123;</div><div class="line">    classpath <span class="string">'com.neenbedankt.gradle.plugins:android-apt:1.4'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//module gradle</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"> </div><div class="line">dependencies &#123;</div><div class="line">  apt <span class="string">'com.google.dagger:dagger-compiler:2.2'</span></div><div class="line">  compile <span class="string">'com.google.dagger:dagger:2.2'</span></div><div class="line">  provided <span class="string">'javax.annotation:jsr250-api:1.0'</span> </div><div class="line">  </div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><ul>
-<li>@Module: Modules类里面的方法专门提供依赖，所以我们定义一个类，用@Module注解，这样Dagger在构造类的实例的时候，就知道从哪里去找到需要的 依赖。modules的一个重要特征是它们设计为分区并组合在一起（比如说，在我们的app中可以有多个组成在一起的modules）。</li>
-<li>@Provide: 在modules中，我们定义的方法是用这个注解，以此来告诉Dagger我们想要构造对象并提供这些依赖。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Module</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityModule</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Provides</span></div><div class="line">    <span class="function">UserInfo <span class="title">provideUserInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> UserInfo();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>UseInfo:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> String name;</div><div class="line">    <span class="keyword">public</span> String age;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">"jason"</span>;</div><div class="line">        <span class="keyword">this</span>.age = <span class="string">"20"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Inject"><a href="#Inject" class="headerlink" title="Inject"></a>Inject</h2><p>@Inject: 通常在需要依赖的地方使用这个注解。换句话说，你用它告诉Dagger这个类或者字段需要依赖注入。这样，Dagger就会构造一个这个类的实例并满足他们的依赖。</p>
-<p>Dagger给了我们一堆选择用来注入依赖：</p>
-<ul>
-<li>构造方法注入：在类的构造方法前面注释@Inject</li>
-<li>成员变量注入：在类的成员变量（非私有）前面注释@Inject</li>
-<li>函数方法注入：在函数前面注释@Inject</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Inject</span></div><div class="line">UserInfo userInfo;</div></pre></td></tr></table></figure>
-<h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><p>@Component: Components从根本上来说就是一个注入器，也可以说是@Inject和@Module的桥梁，它的主要作用就是连接这两个部分。 Components可以提供所有定义了的类型的实例，比如：我们必须用@Component注解一个接口然后列出所有的@Modules组成该组件，如 果缺失了任何一块都会在编译的时候报错。所有的组件都可以通过它的modules知道依赖的范围。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span>(modules = ActivityModule.class)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ActivityComponent</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">inject</span><span class="params">(MainActivity activity)</span></span>;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Initializer</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Initializer</span><span class="params">()</span> </span>&#123;</div><div class="line">        &#125; <span class="comment">// No instances.</span></div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ActivityComponent <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> DaggerActivityComponent.builder().activityModule(<span class="keyword">new</span> ActivityModule()).build();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Invoke"><a href="#Invoke" class="headerlink" title="Invoke"></a>Invoke</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">    mActivityComponent = ActivityComponent.Initializer.init();</div><div class="line"></div><div class="line">    mActivityComponent.inject(<span class="keyword">this</span>);</div><div class="line">    Log.d(TAG, userInfo.name + userInfo.age);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>源码的GitHub <a href="https://github.com/jasonim/JasonAndroidSimple/tree/master/daggersample" target="_blank" rel="external">下载地址</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://fernandocejas.com/2015/04/11/tasting-dagger-2-on-android/" target="_blank" rel="external">Tasting Dagger 2 on Android</a></p>
+        <p>以前我在[内功之自动化测试]中说到测试在项目中的重要性。单元测试是一个个「点」（细胞）的重构，是重构的基石，今天我们说单元测试中如何使用 [Mock] 及 [Mockito]的。</p>
 
       
     </div>
@@ -407,7 +375,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/依赖注入/" rel="tag">#依赖注入</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/单元测试/" rel="tag">#单元测试</a>
           
         </div>
       
@@ -416,17 +386,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/30/how_github/" rel="next" title="Github教程整理汇总(更新)">
-                <i class="fa fa-chevron-left"></i> Github教程整理汇总(更新)
+              <a href="/2016/11/07/android_retrofit_advanced/" rel="next" title="Android常用的开源项目及其比较系列-Retrofit进阶教程">
+                <i class="fa fa-chevron-left"></i> Android常用的开源项目及其比较系列-Retrofit进阶教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/14/android-auto-test-espresso/" rel="prev" title="android 自动化测试-Espresso">
-                android 自动化测试-Espresso <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,10 +407,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/10/android-dagger/"
-     data-title="使用Dagger 2进行依赖注入"
+        <div class="ds-share flat" data-thread-key="2016/11/07/android-unit-test-mock/"
+     data-title="Android 单元测试-Mockito"
      data-content=""
-     data-url="http://hujiandong.com/2016/05/10/android-dagger/">
+     data-url="http://hujiandong.com/2016/11/07/android-unit-test-mock/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -471,8 +437,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/10/android-dagger/"
-           data-title="使用Dagger 2进行依赖注入" data-url="http://hujiandong.com/2016/05/10/android-dagger/">
+      <div class="ds-thread" data-thread-key="2016/11/07/android-unit-test-mock/"
+           data-title="Android 单元测试-Mockito" data-url="http://hujiandong.com/2016/11/07/android-unit-test-mock/">
       </div>
     
   </div>
@@ -587,7 +553,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dagger"><span class="nav-number">2.</span> <span class="nav-text">dagger</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#show-me-the-code"><span class="nav-number">3.</span> <span class="nav-text">show me the code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure"><span class="nav-number">3.1.</span> <span class="nav-text">Configure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Module"><span class="nav-number">3.2.</span> <span class="nav-text">Module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inject"><span class="nav-number">3.3.</span> <span class="nav-text">Inject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Component"><span class="nav-number">3.4.</span> <span class="nav-text">Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Invoke"><span class="nav-number">3.5.</span> <span class="nav-text">Invoke</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
