@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-07T12:26:57.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:28:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
@@ -382,6 +382,7 @@
 <p>anyString()表示任何一个字符串都可以。类似anyString，还有anyInt, anyLong, anyDouble等等。anyObject表示任何对象，any(clazz)表示任何属于clazz的对象。</p>
 <h3 id="指定mock对象的某些方法的行为"><a href="#指定mock对象的某些方法的行为" class="headerlink" title="指定mock对象的某些方法的行为"></a>指定mock对象的某些方法的行为</h3><p>那么接下来，我们就来介绍mock的第二大作用，先介绍其中的第一点：指定mock对象的某个方法返回特定的值。<br>我们见面的 login() 进行修改， 添加对网络的判断， 代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">修改测试代码：</div><div class="line">```java</div><div class="line">NetManagerWraper netManagerWraper = mock(NetManagerWraper.class); <span class="comment">//==&gt;</span></div><div class="line">when(netManagerWraper.isConnected()).thenReturn(<span class="keyword">false</span>); ==&gt;</div></pre></td></tr></table></figure>
+<p>下面我们说说怎么样指定一个方法执行特定的动作，这个功能一般是用在目标的方法是void类型的时候。<br>现在假设我们的LoginPresenter的login()方法是这样的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//执行登录操作, 并且处理网络返回</span></div><div class="line">mAuthTask.execute(email, password, <span class="keyword">new</span> NetworkCallBack() &#123;</div><div class="line">                         <span class="meta">@Override</span></div><div class="line">                         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(Object data)</span> </span>&#123;</div><div class="line"></div><div class="line">                         &#125;</div><div class="line"></div><div class="line">                         <span class="meta">@Override</span></div><div class="line">                         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailed</span><span class="params">(<span class="keyword">int</span> code, String msg)</span> </span>&#123;</div><div class="line"></div><div class="line">                         &#125;</div><div class="line">                         &#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
