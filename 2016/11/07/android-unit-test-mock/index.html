@@ -92,10 +92,12 @@
 <meta property="og:url" content="http://hujiandong.com/2016/11/07/android-unit-test-mock/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android 单元测试-Mockito">
-<meta property="og:updated_time" content="2016-11-08T02:41:25.000Z">
+<meta property="og:image" content="http://7xnilf.com1.z0.glb.clouddn.com/mock_wanted.png">
+<meta property="og:updated_time" content="2016-11-08T02:51:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 单元测试-Mockito">
 <meta name="twitter:description" content="Android 单元测试-Mockito">
+<meta name="twitter:image" content="http://7xnilf.com1.z0.glb.clouddn.com/mock_wanted.png">
 
 
 
@@ -347,7 +349,7 @@
       
 
       
-        <p>以前我在[内功之自动化测试]中说到测试在项目中的重要性。单元测试是一个个「点」（细胞）的重构，是重构的基石，今天我们说单元测试中如何使用 [Mock] 及 [Mockito]的。</p>
+        <p>以前我在<strong><a href="http://hujiandong.com/2016/04/10/how_code_auto_test/">内功之自动化测试</a></strong>中说到测试在项目中的重要性。单元测试是一个个「点」（细胞）的重构，是重构的基石，今天我们说单元测试中如何使用 <strong><a href="https://en.wikipedia.org/wiki/Mock_object" target="_blank" rel="external">Mock</a></strong> 及 <strong><a href="http://mockito.org/" target="_blank" rel="external">Mockito</a></strong> 的。</p>
 <h2 id="Mock-概念"><a href="#Mock-概念" class="headerlink" title="Mock 概念"></a>Mock 概念</h2><p>所谓的mock就是创建一个类的虚假的对象，在测试环境中，用来替换掉真实的对象，主要提供两大功能：</p>
 <ul>
 <li>验证这个对象的某些方法的调用情况，调用了多少次，参数是什么等等</li>
@@ -375,7 +377,9 @@
 <h3 id="误区二"><a href="#误区二" class="headerlink" title="误区二"></a>误区二</h3><p>我们先看一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginPresenter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> UserLoginTask mAuthTask;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(String email, String password)</span> </span>&#123;</div><div class="line">        mAuthTask = <span class="keyword">new</span> UserLoginTask(email, password);</div><div class="line">        </div><div class="line">        <span class="comment">//执行登录操作</span></div><div class="line">        mAuthTask.execute();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上面是一个登录操作， 现在我们来验证 login() 函数， 因为它没有返回值，这时候我们只要验证 execute() 有没有执行进行了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLogin</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">    UserLoginTask mockLoginTask = mock(UserLoginTask.class);</div><div class="line">    LoginPresenter loginPresenter = <span class="keyword">new</span> LoginPresenter();</div><div class="line">    loginPresenter.login(<span class="string">"jason@gmail.com"</span>, <span class="string">"123456"</span>);</div><div class="line">    </div><div class="line">    <span class="comment">//验证是否执行 excute()</span></div><div class="line">    verify(mockLoginTask).excute();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由于 UserLoginTask 继承 AsyncTask， 所有会报错 误区一中的问题（not  mock），这时候我们需要用到 Robolectric 框架，这个可以参考我[以前写的]。解决这个问题以后你会发现，fuck，怎么还有问题， 什么鬼。。<br>(img)<br>mock的第二个误解：<strong>mock出来的对象并不会自动替换掉正式代码里面的对象，你必须要有某种方式把mock对象应用到正式代码里面。</strong></p>
+<p>由于 UserLoginTask 继承 AsyncTask， 所有会报错 误区一中的问题（not  mock），这时候我们需要用到 Robolectric 框架，这个可以参考我<strong><a href="http://hujiandong.com/2016/05/20/android-unit-test/">以前写的</a></strong>。解决这个问题以后你会发现，fuck，怎么还有问题， 什么鬼。。</p>
+<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/mock_wanted.png" alt=""></p>
+<p>mock的第二个误解：<strong>mock出来的对象并不会自动替换掉正式代码里面的对象，你必须要有某种方式把mock对象应用到正式代码里面。</strong></p>
 <p>这个时候我们可以通过 构造方式将依赖传进去，就 OK 了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginPresenter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> UserLoginTask mAuthTask; <span class="comment">//===&gt;</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LoginPresenter</span><span class="params">(UserLoginTask mAuthTask)</span> </span>&#123;</div><div class="line">        <span class="comment">//TODO test argument</span></div><div class="line">        <span class="comment">//执行登录操作</span></div><div class="line">        mAuthTask.execute(email, password);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>修改测试用例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">…</div><div class="line">LoginPresenter loginPresenter = new LoginPresenter(mockLonginTask); //==&gt;</div></pre></td></tr></table></figure></p>
@@ -398,7 +402,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSpy</span><span class="params">()</span> </span>&#123;</div><div class="line">    NetManagerWraper spy = spy(<span class="keyword">new</span> NetManagerWraper());</div><div class="line">    assertTrue(spy.isConnected());</div><div class="line">    when(spy.isConnected()).thenReturn(<span class="keyword">false</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>总之，spy与mock的唯一区别就是默认行为不一样：spy对象的方法默认调用真实的逻辑，mock对象的方法默认什么都不做，或直接返回默认值。</strong></p>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>上面的就是 Mockito 的基本使用， 当然由于并不是很全，更全面的可以看[这里]。基本的概念都有了， 下面的就是多用， 在项目中发现问题， 然后带着问题去查看文档。 Android 下还可以用 Dagger 动态依赖框架进行测试， 由于涉及到 Dagger 框架的使用，这个我们可以单独来说。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>上面的就是 Mockito 的基本使用， 当然由于并不是很全，更全面的可以看<strong><a href="http://www.vogella.com/tutorials/Mockito/article.html" target="_blank" rel="external">这里</a></strong>。基本的概念都有了， 下面的就是多用， 在项目中发现问题， 然后带着问题去查看文档。 Android 下还可以用 Dagger 动态依赖框架进行测试， 由于涉及到 Dagger 框架的使用，这个我们可以单独来说。</p>
 <p>上面代码在 <a href="https://github.com/jasonim/JasonAndroidSimple/tree/master/mocksample" target="_blank" rel="external">Github</a> 上</p>
 
       
