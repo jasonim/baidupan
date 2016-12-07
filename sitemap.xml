@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2016/12/07/factory-method/</loc>
+    
+    <lastmod>2016-12-07T02:45:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/12/07/abstract-factory/</loc>
+    
+    <lastmod>2016-12-07T02:42:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/11/28/my-program-away-1/</loc>
     
     <lastmod>2016-11-28T06:54:35.000Z</lastmod>
@@ -23,7 +37,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
+    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -44,28 +65,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/05/29/project_weixin_introduce/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -219,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
+    <loc>http://hujiandong.com/2016/05/29/project_weixin_introduce/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -374,6 +374,20 @@
   
   <url>
     <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     

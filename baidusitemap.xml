@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2016/12/07/factory-method/</loc>
+    <lastmod>2016-12-07T02:45:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>工厂方法模式</title>
+        <pubTime>2016-12-07T02:43:23.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://hujiandong.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/12/07/abstract-factory/</loc>
+    <lastmod>2016-12-07T02:42:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>抽象工厂模式</title>
+        <pubTime>2016-12-07T02:40:13.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://hujiandong.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2016/11/28/my-program-away-1/</loc>
     <lastmod>2016-11-28T06:54:35.000Z</lastmod>
     <data>
@@ -66,26 +106,24 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
+    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>写代码的正确姿势-序</title>
-        <pubTime>2016-02-27T07:30:16.000Z</pubTime>
+        <title>Hexo的next主题中添加微信公众号二维码</title>
+        <pubTime>2015-10-15T01:49:00.000Z</pubTime>
         
-        <tag>重构</tag>
+        <tag>Hexo</tag>
          
          
            
              
-              <breadCrumb title="refactor" url="http://hujiandong.com/categories/refactor/"/>
+              <breadCrumb title="Hexo" url="http://hujiandong.com/categories/Hexo/"/>
           
         </display>
     </data>
     </url>
 
-    
-    
     
   <url>
     <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
@@ -107,6 +145,8 @@
     </url>
 
     
+    
+    
   <url>
     <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -116,46 +156,6 @@
         <pubTime>2015-10-18T07:30:16.000Z</pubTime>
         
         <tag>随想</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/05/29/project_weixin_introduce/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何实现一个朋友圈--简介篇</title>
-        <pubTime>2016-05-29T11:30:16.000Z</pubTime>
-        
-        <tag>朋友圈</tag>
-         
-         
-           
-             
-              <breadCrumb title="项目" url="http://hujiandong.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>回顾2015</title>
-        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
-        
-        <tag>随笔</tag>
          
          
            
@@ -596,19 +596,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>智能指针解析与实现</title>
-        <pubTime>2015-09-10T02:50:00.000Z</pubTime>
+        <title>写代码的正确姿势-序</title>
+        <pubTime>2016-02-27T07:30:16.000Z</pubTime>
         
-        <tag>C++,stl</tag>
+        <tag>重构</tag>
          
          
            
              
-              <breadCrumb title="lang-C/C++" url="http://hujiandong.com/categories/lang-C-C/"/>
+              <breadCrumb title="refactor" url="http://hujiandong.com/categories/refactor/"/>
           
         </display>
     </data>
@@ -616,19 +616,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
+    <loc>http://hujiandong.com/2016/05/29/project_weixin_introduce/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo的next主题中添加微信公众号二维码</title>
-        <pubTime>2015-10-15T01:49:00.000Z</pubTime>
+        <title>如何实现一个朋友圈--简介篇</title>
+        <pubTime>2016-05-29T11:30:16.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>朋友圈</tag>
          
          
            
              
-              <breadCrumb title="Hexo" url="http://hujiandong.com/categories/Hexo/"/>
+              <breadCrumb title="项目" url="http://hujiandong.com/categories/%E9%A1%B9%E7%9B%AE/"/>
           
         </display>
     </data>
@@ -1069,6 +1069,46 @@
            
              
               <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>智能指针解析与实现</title>
+        <pubTime>2015-09-10T02:50:00.000Z</pubTime>
+        
+        <tag>C++,stl</tag>
+         
+         
+           
+             
+              <breadCrumb title="lang-C/C++" url="http://hujiandong.com/categories/lang-C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>回顾2015</title>
+        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
           
         </display>
     </data>
