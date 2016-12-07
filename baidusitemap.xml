@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2016/11/21/design-principle/</loc>
+    <lastmod>2016-12-07T05:56:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式几大原则</title>
+        <pubTime>2016-11-21T10:06:26.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://hujiandong.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2016/12/07/factory-method/</loc>
     <lastmod>2016-12-07T02:45:57.000Z</lastmod>
     <data>
@@ -57,26 +77,6 @@
            
              
               <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/11/21/design-principle/</loc>
-    <lastmod>2016-11-21T10:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式几大原则</title>
-        <pubTime>2016-11-21T10:06:26.000Z</pubTime>
-        
-        <tag>Android，设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://hujiandong.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
