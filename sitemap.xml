@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/01/01/2016-person-summary/</loc>
+    
+    <lastmod>2017-01-02T02:24:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2016/12/21/design_pattern_singleton/</loc>
     
     <lastmod>2017-01-02T02:10:24.000Z</lastmod>
@@ -51,14 +58,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
+    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -233,14 +233,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/about/index.html</loc>
+    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
+    <loc>http://hujiandong.com/about/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -402,6 +402,13 @@
   
   <url>
     <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     

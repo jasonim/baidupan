@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2017/01/01/2016-person-summary/</loc>
+    <lastmod>2017-01-02T02:24:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>我的 2016</title>
+        <pubTime>2017-01-01T07:30:16.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2016/12/21/design_pattern_singleton/</loc>
     <lastmod>2017-01-02T02:10:24.000Z</lastmod>
     <data>
@@ -146,25 +166,24 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
+    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>打造最强终端-iTerm 2</title>
-        <pubTime>2016-09-11T02:30:16.000Z</pubTime>
+        <title>学英语（持续更新）</title>
+        <pubTime>2015-09-28T07:25:00.000Z</pubTime>
         
-        <tag>工具</tag>
+        <tag>学英语</tag>
          
          
            
              
-              <breadCrumb title="工具" url="http://hujiandong.com/categories/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="english" url="http://hujiandong.com/categories/english/"/>
           
         </display>
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
@@ -654,26 +673,26 @@
     </url>
 
     
-    
   <url>
-    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
+    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>学英语（持续更新）</title>
-        <pubTime>2015-09-28T07:25:00.000Z</pubTime>
+        <title>打造最强终端-iTerm 2</title>
+        <pubTime>2016-09-11T02:30:16.000Z</pubTime>
         
-        <tag>学英语</tag>
+        <tag>工具</tag>
          
          
            
              
-              <breadCrumb title="english" url="http://hujiandong.com/categories/english/"/>
+              <breadCrumb title="工具" url="http://hujiandong.com/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
@@ -1154,6 +1173,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://hujiandong.com/2015/02/16/2015-02-16-work-summary/</loc>
