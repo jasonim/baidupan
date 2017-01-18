@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/01/18/mac-os-guide/</loc>
+    
+    <lastmod>2017-01-18T02:41:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2017/01/18/programer-book/</loc>
     
-    <lastmod>2017-01-18T02:26:30.000Z</lastmod>
+    <lastmod>2017-01-18T02:29:21.000Z</lastmod>
     
   </url>
   
@@ -65,14 +72,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -240,14 +240,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/about/index.html</loc>
+    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
+    <loc>http://hujiandong.com/about/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -416,6 +416,13 @@
   
   <url>
     <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     

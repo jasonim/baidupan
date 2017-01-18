@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2017/01/18/mac-os-guide/</loc>
+    <lastmod>2017-01-18T02:41:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>正确使用 Mac 的姿势</title>
+        <pubTime>2017-01-18T02:33:33.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2017/01/18/programer-book/</loc>
-    <lastmod>2017-01-18T02:26:30.000Z</lastmod>
+    <lastmod>2017-01-18T02:29:21.000Z</lastmod>
     <data>
         <display>
         <title>程序员最应该读的书</title>
@@ -186,39 +206,21 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
+    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>学英语（持续更新）</title>
-        <pubTime>2015-09-28T07:25:00.000Z</pubTime>
+        <title>一枚c/c++程序员java探索－对象（二）</title>
+        <pubTime>2015-12-03T07:25:00.000Z</pubTime>
         
-        <tag>学英语</tag>
+        <tag>java</tag>
+         
+        <tag>java学习系列</tag>
          
          
            
              
-              <breadCrumb title="english" url="http://hujiandong.com/categories/english/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android Log打印的正确姿势</title>
-        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
           
         </display>
     </data>
@@ -693,28 +695,26 @@
     </url>
 
     
-    
   <url>
-    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
+    <loc>http://hujiandong.com/2015/09/28/how_learn_english/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>一枚c/c++程序员java探索－对象（二）</title>
-        <pubTime>2015-12-03T07:25:00.000Z</pubTime>
+        <title>学英语（持续更新）</title>
+        <pubTime>2015-09-28T07:25:00.000Z</pubTime>
         
-        <tag>java</tag>
-         
-        <tag>java学习系列</tag>
+        <tag>学英语</tag>
          
          
            
              
-              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+              <breadCrumb title="english" url="http://hujiandong.com/categories/english/"/>
           
         </display>
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://hujiandong.com/2016/04/30/how_github/</loc>
@@ -1189,6 +1189,26 @@
            
              
               <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Log打印的正确姿势</title>
+        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
           
         </display>
     </data>
