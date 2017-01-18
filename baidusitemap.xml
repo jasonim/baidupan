@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2017/01/18/programer-book/</loc>
+    <lastmod>2017-01-18T02:26:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>程序员最应该读的书</title>
+        <pubTime>2017-01-18T02:26:15.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2017/01/01/2016-person-summary/</loc>
     <lastmod>2017-01-02T02:30:01.000Z</lastmod>
     <data>
@@ -179,26 +199,6 @@
            
              
               <breadCrumb title="english" url="http://hujiandong.com/categories/english/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用Dagger 2进行依赖注入</title>
-        <pubTime>2016-05-10T11:30:16.000Z</pubTime>
-        
-        <tag>依赖注入</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
           
         </display>
     </data>
@@ -1174,6 +1174,26 @@
     </url>
 
     
+    
+  <url>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用Dagger 2进行依赖注入</title>
+        <pubTime>2016-05-10T11:30:16.000Z</pubTime>
+        
+        <tag>依赖注入</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://hujiandong.com/2015/02/16/2015-02-16-work-summary/</loc>
