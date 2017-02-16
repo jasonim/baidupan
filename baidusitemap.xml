@@ -226,21 +226,81 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
+    <loc>http://hujiandong.com/2016/10/07/holiday-think/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>一枚c/c++程序员java探索－对象（二）</title>
-        <pubTime>2015-12-03T07:25:00.000Z</pubTime>
+        <title>国庆假期感想--谈谈房价</title>
+        <pubTime>2016-10-07T02:30:16.000Z</pubTime>
         
-        <tag>java</tag>
-         
-        <tag>java学习系列</tag>
+        <tag>随笔</tag>
          
          
            
              
-              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android Log打印的正确姿势</title>
+        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈工作和生活</title>
+        <pubTime>2015-10-18T07:30:16.000Z</pubTime>
+        
+        <tag>随想</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android常用的开源项目及其比较系列-序列化篇</title>
+        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>开源项目</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
           
         </display>
     </data>
@@ -270,19 +330,59 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/10/20/android_foregound_app/</loc>
+    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>android L获取前台应用的包名</title>
-        <pubTime>2015-10-20T05:49:00.000Z</pubTime>
+        <title>Android 性能优化</title>
+        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
         
-        <tag>android</tag>
+        <tag>Android</tag>
          
          
            
              
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Retrofit源码解析（一）</title>
+        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
+        
+        <tag>retrofit</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈缓存</title>
+        <pubTime>2016-04-17T01:30:16.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
           
         </display>
     </data>
@@ -310,14 +410,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    <loc>http://hujiandong.com/2015/10/20/android_foregound_app/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>android笔记-数据篇</title>
-        <pubTime>2016-02-18T11:30:16.000Z</pubTime>
+        <title>android L获取前台应用的包名</title>
+        <pubTime>2015-10-20T05:49:00.000Z</pubTime>
         
-        <tag>android系列</tag>
+        <tag>android</tag>
          
          
            
@@ -350,19 +450,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
+    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Retrofit源码解析（一）</title>
-        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
+        <title>android笔记-数据篇</title>
+        <pubTime>2016-02-18T11:30:16.000Z</pubTime>
         
-        <tag>retrofit</tag>
+        <tag>android系列</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
           
         </display>
     </data>
@@ -392,11 +492,11 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android_retrofit_advanced/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android常用的开源项目及其比较系列-序列化篇</title>
+        <title>Android常用的开源项目及其比较系列-Retrofit进阶教程</title>
         <pubTime>2016-11-07T08:48:27.000Z</pubTime>
         
         <tag>Android</tag>
@@ -434,21 +534,60 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android_retrofit_advanced/</loc>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android常用的开源项目及其比较系列-Retrofit进阶教程</title>
-        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
+        <title>回顾2015</title>
+        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
         
-        <tag>Android</tag>
-         
-        <tag>开源项目</tag>
+        <tag>随笔</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>智能指针解析与实现</title>
+        <pubTime>2015-09-10T02:50:00.000Z</pubTime>
+        
+        <tag>C++,stl</tag>
+         
+         
+           
+             
+              <breadCrumb title="lang-C/C++" url="http://hujiandong.com/categories/lang-C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://hujiandong.com/2016/08/09/five-years-bj-life/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>五年北漂生活</title>
+        <pubTime>2016-08-09T01:30:16.000Z</pubTime>
+        
+        <tag>随想</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
           
         </display>
     </data>
@@ -476,12 +615,73 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/08/09/five-years-bj-life/</loc>
+    <loc>http://hujiandong.com/2016/03/31/great-tools-for-android-development/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>五年北漂生活</title>
-        <pubTime>2016-08-09T01:30:16.000Z</pubTime>
+        <title>提高android开发的效率工具</title>
+        <pubTime>2016-03-31T05:30:16.000Z</pubTime>
+        
+        <tag>android</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/10/12/hack_culture/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈黑客文化</title>
+        <pubTime>2015-10-12T05:32:00.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://hujiandong.com/2016/03/08/hello_son/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>迟来的一封信-写于你一周时</title>
+        <pubTime>2016-03-08T11:30:16.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>提问的艺术</title>
+        <pubTime>2016-08-17T12:30:16.000Z</pubTime>
         
         <tag>随想</tag>
          
@@ -516,19 +716,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/03/31/great-tools-for-android-development/</loc>
+    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>提高android开发的效率工具</title>
-        <pubTime>2016-03-31T05:30:16.000Z</pubTime>
+        <title>Hexo的next主题中添加微信公众号二维码</title>
+        <pubTime>2015-10-15T01:49:00.000Z</pubTime>
         
-        <tag>android</tag>
+        <tag>Hexo</tag>
          
          
            
              
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+              <breadCrumb title="Hexo" url="http://hujiandong.com/categories/Hexo/"/>
           
         </display>
     </data>
@@ -536,72 +736,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/10/07/holiday-think/</loc>
+    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>国庆假期感想--谈谈房价</title>
-        <pubTime>2016-10-07T02:30:16.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/03/08/hello_son/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>迟来的一封信-写于你一周时</title>
-        <pubTime>2016-03-08T11:30:16.000Z</pubTime>
-        
-        <tag>杂谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/10/12/hack_culture/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈黑客文化</title>
-        <pubTime>2015-10-12T05:32:00.000Z</pubTime>
-        
-        <tag>杂谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>写代码的正确姿势-剑招之重构</title>
-        <pubTime>2016-03-13T07:30:16.000Z</pubTime>
+        <title>写代码的正确姿势-序</title>
+        <pubTime>2016-02-27T07:30:16.000Z</pubTime>
         
         <tag>重构</tag>
          
@@ -636,12 +776,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
+    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>写代码的正确姿势-序</title>
-        <pubTime>2016-02-27T07:30:16.000Z</pubTime>
+        <title>写代码的正确姿势-剑招之重构</title>
+        <pubTime>2016-03-13T07:30:16.000Z</pubTime>
         
         <tag>重构</tag>
          
@@ -656,39 +796,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/10/15/how_add_weixinpublic/</loc>
+    <loc>http://hujiandong.com/2016/04/30/how_github/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo的next主题中添加微信公众号二维码</title>
-        <pubTime>2015-10-15T01:49:00.000Z</pubTime>
+        <title>Github教程整理汇总(更新)</title>
+        <pubTime>2016-04-30T02:30:16.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Git</tag>
          
          
            
              
-              <breadCrumb title="Hexo" url="http://hujiandong.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>打造最强终端-iTerm 2</title>
-        <pubTime>2016-09-11T02:30:16.000Z</pubTime>
-        
-        <tag>工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="http://hujiandong.com/categories/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="Git" url="http://hujiandong.com/categories/Git/"/>
           
         </display>
     </data>
@@ -715,21 +835,42 @@
     </url>
 
     
-    
   <url>
-    <loc>http://hujiandong.com/2016/04/30/how_github/</loc>
+    <loc>http://hujiandong.com/2015/12/03/how_learn_java_object2/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Github教程整理汇总(更新)</title>
-        <pubTime>2016-04-30T02:30:16.000Z</pubTime>
+        <title>一枚c/c++程序员java探索－对象（二）</title>
+        <pubTime>2015-12-03T07:25:00.000Z</pubTime>
         
-        <tag>Git</tag>
+        <tag>java</tag>
+         
+        <tag>java学习系列</tag>
          
          
            
              
-              <breadCrumb title="Git" url="http://hujiandong.com/categories/Git/"/>
+              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>打造最强终端-iTerm 2</title>
+        <pubTime>2016-09-11T02:30:16.000Z</pubTime>
+        
+        <tag>工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具" url="http://hujiandong.com/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -779,56 +920,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/11/17/learning_java_base_class/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>一枚c/c++程序员java探索－一些常用类</title>
-        <pubTime>2015-11-17T07:25:00.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>java学习系列</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hujiandong.com/2015/12/30/java_excption/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
         <title>一枚c/c++程序员java探索－异常处理</title>
         <pubTime>2015-12-30T07:30:16.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>java学习系列</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/01/24/learning_java_io/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>一枚c/c++程序员java探索－io</title>
-        <pubTime>2016-01-24T07:30:16.000Z</pubTime>
         
         <tag>java</tag>
          
@@ -867,12 +964,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/11/01/learning_java_introdution/</loc>
+    <loc>http://hujiandong.com/2015/11/17/learning_java_base_class/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>一枚c/c++程序员java探索－序</title>
-        <pubTime>2015-11-01T07:30:16.000Z</pubTime>
+        <title>一枚c/c++程序员java探索－一些常用类</title>
+        <pubTime>2015-11-17T07:25:00.000Z</pubTime>
         
         <tag>java</tag>
          
@@ -895,6 +992,50 @@
         <display>
         <title>一枚c/c++程序员java探索－容器</title>
         <pubTime>2016-01-28T13:30:16.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>java学习系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/11/01/learning_java_introdution/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>一枚c/c++程序员java探索－序</title>
+        <pubTime>2015-11-01T07:30:16.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>java学习系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/01/24/learning_java_io/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>一枚c/c++程序员java探索－io</title>
+        <pubTime>2016-01-24T07:30:16.000Z</pubTime>
         
         <tag>java</tag>
          
@@ -975,14 +1116,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/04/04/my-year-life/</loc>
+    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>我眼中的生活</title>
-        <pubTime>2016-04-04T07:30:16.000Z</pubTime>
+        <title>读Scaler700+文章后感想</title>
+        <pubTime>2016-02-11T07:30:16.000Z</pubTime>
         
-        <tag>杂谈</tag>
+        <tag>随笔</tag>
          
          
            
@@ -1015,46 +1156,6 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>读Scaler700+文章后感想</title>
-        <pubTime>2016-02-11T07:30:16.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/08/17/question_art/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>提问的艺术</title>
-        <pubTime>2016-08-17T12:30:16.000Z</pubTime>
-        
-        <tag>随想</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hujiandong.com/2016/06/09/rich-dad-poor-dad/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
@@ -1075,59 +1176,39 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    <loc>http://hujiandong.com/2016/04/04/my-year-life/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>谈谈缓存</title>
-        <pubTime>2016-04-17T01:30:16.000Z</pubTime>
+        <title>我眼中的生活</title>
+        <pubTime>2016-04-04T07:30:16.000Z</pubTime>
         
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://hujiandong.com/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>智能指针解析与实现</title>
-        <pubTime>2015-09-10T02:50:00.000Z</pubTime>
-        
-        <tag>C++,stl</tag>
-         
-         
-           
-             
-              <breadCrumb title="lang-C/C++" url="http://hujiandong.com/categories/lang-C-C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>回顾2015</title>
-        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
-        
-        <tag>随笔</tag>
+        <tag>杂谈</tag>
          
          
            
              
               <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用Dagger 2进行依赖注入</title>
+        <pubTime>2016-05-10T11:30:16.000Z</pubTime>
+        
+        <tag>依赖注入</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
           
         </display>
     </data>
@@ -1155,120 +1236,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
+    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>谈谈工作和生活</title>
-        <pubTime>2015-10-18T07:30:16.000Z</pubTime>
+        <title>我为什么写博客</title>
+        <pubTime>2011-12-18T07:30:16.000Z</pubTime>
         
-        <tag>随想</tag>
+        <tag>随笔</tag>
          
          
            
              
               <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用Dagger 2进行依赖注入</title>
-        <pubTime>2016-05-10T11:30:16.000Z</pubTime>
-        
-        <tag>依赖注入</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android Log打印的正确姿势</title>
-        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android 性能优化</title>
-        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/02/16/2015-02-16-work-summary/</loc>
-    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>2014个人总结</title>
-        <pubTime>2015-02-16T07:30:16.000Z</pubTime>
-        
-        <tag>随想</tag>
-         
-         
-           
-             
-              <breadCrumb title="个人总结" url="http://hujiandong.com/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/07/12/2015-7-12-andorid-note/</loc>
-    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>android 笔记</title>
-        <pubTime>2015-07-12T07:30:16.000Z</pubTime>
-        
-        <tag>android</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
           
         </display>
     </data>
@@ -1318,41 +1298,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2015/07/12/2015-7-12-andorid-note/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>android 直连</title>
-        <pubTime>2015-05-12T07:30:16.000Z</pubTime>
+        <title>android 笔记</title>
+        <pubTime>2015-07-12T07:30:16.000Z</pubTime>
         
         <tag>android</tag>
-         
-        <tag>wifi</tag>
          
          
            
              
               <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/05/21/2015-05-21-no-smart-people/</loc>
-    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>不要做聪明人（转载）</title>
-        <pubTime>2015-05-21T07:30:16.000Z</pubTime>
-        
-        <tag>随想</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
           
         </display>
     </data>
@@ -1380,12 +1338,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/02/08/2015-02-08-hacker/</loc>
+    <loc>http://hujiandong.com/2015/05/21/2015-05-21-no-smart-people/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>关于黑客文化和黑客精神</title>
-        <pubTime>2015-02-08T07:30:16.000Z</pubTime>
+        <title>不要做聪明人（转载）</title>
+        <pubTime>2015-05-21T07:30:16.000Z</pubTime>
         
         <tag>随想</tag>
          
@@ -1400,14 +1358,56 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>我为什么写博客</title>
-        <pubTime>2011-12-18T07:30:16.000Z</pubTime>
+        <title>android 直连</title>
+        <pubTime>2015-05-12T07:30:16.000Z</pubTime>
         
-        <tag>随笔</tag>
+        <tag>android</tag>
+         
+        <tag>wifi</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/02/16/2015-02-16-work-summary/</loc>
+    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>2014个人总结</title>
+        <pubTime>2015-02-16T07:30:16.000Z</pubTime>
+        
+        <tag>随想</tag>
+         
+         
+           
+             
+              <breadCrumb title="个人总结" url="http://hujiandong.com/categories/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/02/08/2015-02-08-hacker/</loc>
+    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于黑客文化和黑客精神</title>
+        <pubTime>2015-02-08T07:30:16.000Z</pubTime>
+        
+        <tag>随想</tag>
          
          
            
