@@ -907,31 +907,6 @@
   </entry>
   
   <entry>
-    <title>Android常用的开源项目及其比较系列-序列化篇</title>
-    <link href="http://hujiandong.com/2016/11/07/android-open-source-serial/"/>
-    <id>http://hujiandong.com/2016/11/07/android-open-source-serial/</id>
-    <published>2016-11-07T08:48:27.000Z</published>
-    <updated>2016-11-07T08:48:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在进入今天的主题之前我们来说一下当下比较火的话题， 一个AR类游戏刷爆国外网络社交平台？是的，它就是<strong>Pokemon Go</strong>，中文意思就是皮卡丘；一个抓精灵手游，通过你的位置信息，根据不同场景的显示不同精灵。不过可惜国内没有开服，听说东北一些地区可以玩。本来不怎么关注游戏的， 也荡起涟漪想体验体验。另一个就是和电影明星赵薇相关的，大家都称“赵薇事件”，一个微博电影宣传照引发的事件。事情刚开始时本来想写一点对此事一些看法的，但还没来得及写，整个事情就像我想想的方向发展了。你猜猜还会不会再次反转，你们还是洗洗睡吧；所以你会发现有些东西不一定是我们看到的， 特别是涉及到政治相关的。</p>
-<h1 id="动态注入"><a href="#动态注入" class="headerlink" title="动态注入"></a>动态注入</h1><h2 id="AndroidAnnotations"><a href="#AndroidAnnotations" class="headerlink" title="AndroidAnnotations"></a>AndroidAnnotations</h2><h2 id="butterknife"><a href="#butterknife" class="headerlink" title="butterknife"></a>butterknife</h2><h2 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h2><h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><h2 id="Jackjson"><a href="#Jackjson" class="headerlink" title="Jackjson"></a>Jackjson</h2><h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h2 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h2>]]></content>
-    
-    <summary type="html">
-    
-      介绍常用的序列化框架和注解框架
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hujiandong.com/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
-    
-      <category term="开源项目" scheme="http://hujiandong.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android常用的开源项目及其比较系列-Retrofit进阶教程</title>
     <link href="http://hujiandong.com/2016/11/07/android_retrofit_advanced/"/>
     <id>http://hujiandong.com/2016/11/07/android_retrofit_advanced/</id>
@@ -995,6 +970,31 @@
     <summary type="html">
     
       网络篇
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hujiandong.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
+    
+      <category term="开源项目" scheme="http://hujiandong.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android常用的开源项目及其比较系列-序列化篇</title>
+    <link href="http://hujiandong.com/2016/11/07/android-open-source-serial/"/>
+    <id>http://hujiandong.com/2016/11/07/android-open-source-serial/</id>
+    <published>2016-11-07T08:48:27.000Z</published>
+    <updated>2016-11-07T08:48:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在进入今天的主题之前我们来说一下当下比较火的话题， 一个AR类游戏刷爆国外网络社交平台？是的，它就是<strong>Pokemon Go</strong>，中文意思就是皮卡丘；一个抓精灵手游，通过你的位置信息，根据不同场景的显示不同精灵。不过可惜国内没有开服，听说东北一些地区可以玩。本来不怎么关注游戏的， 也荡起涟漪想体验体验。另一个就是和电影明星赵薇相关的，大家都称“赵薇事件”，一个微博电影宣传照引发的事件。事情刚开始时本来想写一点对此事一些看法的，但还没来得及写，整个事情就像我想想的方向发展了。你猜猜还会不会再次反转，你们还是洗洗睡吧；所以你会发现有些东西不一定是我们看到的， 特别是涉及到政治相关的。</p>
+<h1 id="动态注入"><a href="#动态注入" class="headerlink" title="动态注入"></a>动态注入</h1><h2 id="AndroidAnnotations"><a href="#AndroidAnnotations" class="headerlink" title="AndroidAnnotations"></a>AndroidAnnotations</h2><h2 id="butterknife"><a href="#butterknife" class="headerlink" title="butterknife"></a>butterknife</h2><h2 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h2><h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><h2 id="Jackjson"><a href="#Jackjson" class="headerlink" title="Jackjson"></a>Jackjson</h2><h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h2 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h2>]]></content>
+    
+    <summary type="html">
+    
+      介绍常用的序列化框架和注解框架
     
     </summary>
     
