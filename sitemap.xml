@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/02/22/readable-code/</loc>
+    
+    <lastmod>2017-02-27T10:39:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/about/index.html</loc>
     
     <lastmod>2017-02-22T03:33:22.000Z</lastmod>
@@ -86,14 +93,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
+    <loc>http://hujiandong.com/2016/04/10/how_code_auto_test/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -177,14 +177,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
+    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -247,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
+    <loc>http://hujiandong.com/2016/02/27/how_code/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/04/10/how_code_auto_test/</loc>
+    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
+    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -430,6 +430,13 @@
   
   <url>
     <loc>http://hujiandong.com/2016/06/09/rich-dad-poor-dad/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/02/11/scalersTalk/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -471,14 +478,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/05/21/2015-05-21-no-smart-people/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2015/05/21/2015-05-21-no-smart-people/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
