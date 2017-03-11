@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-03-11T08:32:49.000Z</updated>
+  <updated>2017-03-11T08:34:05.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hujiandong.com/2017/03/11/java_generices_bounded/"/>
     <id>http://hujiandong.com/2017/03/11/java_generices_bounded/</id>
     <published>2017-03-11T02:30:16.000Z</published>
-    <updated>2017-03-11T08:32:49.000Z</updated>
+    <updated>2017-03-11T08:34:05.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="你了解泛型通配符与上下界吗？"><a href="#你了解泛型通配符与上下界吗？" class="headerlink" title="你了解泛型通配符与上下界吗？"></a>你了解泛型通配符与上下界吗？</h1><p>在进入主题之前， 我们先简单说一下 Java 的泛型（generics）。它是JDK 5中引入的一个新特性，允许在定义类和接口的时候使用类型参数（type parameter）。声明的类型参数在使用时用具体的类型来替换。泛型最主要的应用是在JDK 5中的新集合类框架中。</p>
 <p>今天我们主要说如下类型：</p>
@@ -40,10 +40,10 @@
 <p>是的， 终止目的就是想把程序员解放出来，关注他们更应该关注的事情上面去。当我第一次学习 Java 的泛型时，总感觉它类似于 C++ 中的模板。但随着慢慢的深入了解发现它们之间有本质的区别。</p>
 <p>Java 中的泛型基本上完全在编译器中实现，由编译器执行类型检查和类型推断，然后生成普通的非泛型的字节码。这种实现技术称为 擦除（erasure）（编译器使用泛型类型信息保证类型安全，然后在生成字节码之前将其清除），这项技术有一些奇怪，并且有时会带来一些令人迷惑的后果。</p>
 <p>对于泛型概念的引入，开发社区的观点是褒贬不一。从好的方面来说，上面已经说了，主要是在编译时刻就能发现很多明显的错误。而从不好的地方来说，主要是为了保证与旧有版本的兼容性，Java 泛型的实现上存在着一些不够优雅的地方。</p>
-<p>下面我们来看一下，泛型类型的一个定义，后面我们要在这个的基础上进行改造：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Box&lt;T&gt; &#123;</div><div class="line">	// T stands for &quot;Type&quot;</div><div class="line">	private T t;</div><div class="line"></div><div class="line">	public Box(T t) ￼ ￼&#123; this.t = t;￼ &#125;￼</div><div class="line">	public void set(T t) &#123; this.t = t; &#125;</div><div class="line">	public T get() &#123; return t; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面我们来看一下，泛型类型的一个定义，后面我们要在这个的基础上进行改造：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">	<span class="comment">// T stands for "Type"</span></div><div class="line">	<span class="keyword">private</span> T t;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Box</span><span class="params">(T t)</span> ￼ ￼</span>&#123; <span class="keyword">this</span>.t = t;￼ &#125;￼</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123; <span class="keyword">this</span>.t = t; &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> t; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>接下来下面我们来聊聊 Java 泛型的通配符， 记得刚开始看到通配符（？）时我是惊喜的，因为既然有通配符那么就可以这样定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSometing</span><span class="params">(List&lt;?&gt; list)</span> </span>&#123;</div><div class="line">	list.add(<span class="number">1</span>); <span class="comment">//illegal</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可是我们如上写法，总是出现编译错误，然后从惊喜变成惊吓，心想有什么卵用了。最后发现原因是在于通配符的表示的类型是未知的。那在这种情况下，我们可以使用上下界来限制未知类型的范围。好吧，写了那么多， 终于等到今天的主角登场了，容易吗？</p>
-<p>还记得我们上面定义的 Box 吗， 现在我们再定义 Fruit 类以及它的子类 Orange 类。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Fruit &#123; &#125;</div><div class="line">class Orange extends Fruit &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>还记得我们上面定义的 Box 吗， 现在我们再定义 Fruit 类以及它的子类 Orange 类。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123; &#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Orange</span> <span class="keyword">extends</span> <span class="title">Fruit</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
 <p>现在我们想它里面能装水果，那么我可以这么写。<br><code>Box&lt;Fruit&gt; box = Box&lt;Orange&gt;(new Orange) //illegal</code></p>
 <p>不幸的是编译器会报错，这就尴尬了，why？why？ why？实际上，编译器认为的容器之间没有继承关系。所以我们不能这样做。</p>
 <p>为了解决这样的问题， 大神们想出来了&lt;? extens T&gt; 和 &lt;? super T&gt; 的办法，来让它们之间发生关系。</p>
