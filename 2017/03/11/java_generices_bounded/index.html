@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="你了解泛型通配符与上下界吗？">
 <meta property="og:image" content="http://7xnilf.com1.z0.glb.clouddn.com/lower.png">
-<meta property="og:updated_time" content="2017-03-11T08:27:41.000Z">
+<meta property="og:updated_time" content="2017-03-11T08:28:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你了解泛型通配符与上下界吗？">
 <meta name="twitter:description" content="你了解泛型通配符与上下界吗？">
@@ -356,7 +356,14 @@
 <li>通配符以及上下界</li>
 <li>泛型及通配符的使用场景</li>
 </ul>
-<h2 id="为什么使用泛型及背后的问题？"><a href="#为什么使用泛型及背后的问题？" class="headerlink" title="为什么使用泛型及背后的问题？"></a>为什么使用泛型及背后的问题？</h2><p>我们来看一下官方的说法：<br>Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.</p>
+<h2 id="为什么使用泛型及背后的问题？"><a href="#为什么使用泛型及背后的问题？" class="headerlink" title="为什么使用泛型及背后的问题？"></a>为什么使用泛型及背后的问题？</h2><p>我们来看一下官方的说法：</p>
+<blockquote>
+<ul>
+<li>Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.</li>
+<li>Elimination of casts.</li>
+<li>Enabling programmers to implement generic algorithms. By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.</li>
+</ul>
+</blockquote>
 <p>是的， 终止目的就是想把程序员解放出来，关注他们更应该关注的事情上面去。当我第一次学习 Java 的泛型时，总感觉它类似于 C++ 中的模板。但随着慢慢的深入了解发现它们之间有本质的区别。</p>
 <p>Java 中的泛型基本上完全在编译器中实现，由编译器执行类型检查和类型推断，然后生成普通的非泛型的字节码。这种实现技术称为 擦除（erasure）（编译器使用泛型类型信息保证类型安全，然后在生成字节码之前将其清除），这项技术有一些奇怪，并且有时会带来一些令人迷惑的后果。</p>
 <p>对于泛型概念的引入，开发社区的观点是褒贬不一。从好的方面来说，上面已经说了，主要是在编译时刻就能发现很多明显的错误。而从不好的地方来说，主要是为了保证与旧有版本的兼容性，Java 泛型的实现上存在着一些不够优雅的地方。</p>
