@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/03/11/java_generices_bounded/</loc>
+    
+    <lastmod>2017-03-11T08:22:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2017/02/22/readable-code/</loc>
     
     <lastmod>2017-02-27T10:39:56.000Z</lastmod>
@@ -100,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
+    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -177,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
+    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -443,6 +443,13 @@
   </url>
   
   <url>
+    <loc>http://hujiandong.com/2016/04/17/talk_cached/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
@@ -471,14 +478,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/08/24/2015-08-24-linux-skill/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2015/08/24/2015-08-24-linux-skill/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     

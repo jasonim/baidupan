@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-02-27T10:39:56.000Z</updated>
+  <updated>2017-03-11T08:22:47.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你了解泛型通配符与上下界吗？</title>
+    <link href="http://hujiandong.com/2017/03/11/java_generices_bounded/"/>
+    <id>http://hujiandong.com/2017/03/11/java_generices_bounded/</id>
+    <published>2017-03-11T02:30:16.000Z</published>
+    <updated>2017-03-11T08:22:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="你了解泛型通配符与上下界吗？"><a href="#你了解泛型通配符与上下界吗？" class="headerlink" title="你了解泛型通配符与上下界吗？"></a>你了解泛型通配符与上下界吗？</h1><p>在进入主题之前， 我们先简单说一下 Java 的泛型（generics）。它是JDK 5中引入的一个新特性，允许在定义类和接口的时候使用类型参数（type parameter）。声明的类型参数在使用时用具体的类型来替换。泛型最主要的应用是在JDK 5中的新集合类框架中。</p>
+<p>今天我们主要说如下类型：</p>
+<ul>
+<li>泛型的背景</li>
+<li>通配符以及上下界</li>
+<li>泛型及通配符的使用场景</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      你了解泛型通配符与上下界吗？
+    
+    </summary>
+    
+      <category term="java" scheme="http://hujiandong.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://hujiandong.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>编写可读代码的艺术</title>
@@ -1401,52 +1430,6 @@
     
     
       <category term="Markdown" scheme="http://hujiandong.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>至那些时期迷茫的我们</title>
-    <link href="http://hujiandong.com/2016/10/17/lost-self/"/>
-    <id>http://hujiandong.com/2016/10/17/lost-self/</id>
-    <published>2016-10-17T01:30:16.000Z</published>
-    <updated>2016-11-07T08:48:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近和一朋友聚会聊天， 大家都感慨我们已经步入 「 <strong>而立之年</strong> 」，但是我们还是再爬着 Coding。北京的房价这么高， 一月工资连一平米厕所都买不起，路在何方？我还自嘲说， 干了这杯白牛二，睡一觉什么都有了。</p>
-<p>我们在叹息、在迷茫，活着不易，生活更不易。记得前一段时间写过 「<strong><a href="http://hujiandong.com/2016/08/09/five-years-bj-life/">五年北漂生活</a></strong> 」 表达过类似的观点，选择就不要放弃， 要紧牙关，一闭眼一切都会过去的。每个人都或多或少都迷茫过， 如果你告诉我你没有， 那你一定不是人，一定是神。今天我们不谈神界的事， 哪天我们再聊哈。</p>
-<h1 id="为什么会迷茫？"><a href="#为什么会迷茫？" class="headerlink" title="为什么会迷茫？"></a>为什么会迷茫？</h1><p>为什么会迷茫？简单来说就是一件事件想不明白、想不开。房价这么高， 奋斗一辈子也在北京买不起一套房子，就会迷茫问自己，那还该不该去奋斗？</p>
-<p>记得半年前迷茫我技术方向到底往广的方向走，还是往深的方向走？是走技术路线还是偏向于管理？我还因为这些事情和我们 CEO 聊过类似的话题，他没有直接回答我， 给我讲他当时遇到类似这样的问题是怎么解决的。</p>
-<p>上面可以看出迷茫是长时间过程， 短时间之内不一定能解决。下面我们聊聊怎么度过这段空床期。</p>
-<h1 id="如何度过迷茫期？"><a href="#如何度过迷茫期？" class="headerlink" title="如何度过迷茫期？"></a>如何度过迷茫期？</h1><p>当然不能仅仅依靠自己的双手， 而是不断的社交， 这样才能有机会度过空窗期，意淫是解决不了问题的。好了，按照这个思路来，就很好解决了。<br>总体来说分为下面几个方面：</p>
-<ul>
-<li><strong>不断学习， 保持亢奋。</strong></li>
-<li><strong>拜访比你层次高的人， 哪怕是付费的。</strong></li>
-<li><strong>行动，再行动</strong></li>
-</ul>
-<h2 id="不断学习，-保持亢奋"><a href="#不断学习，-保持亢奋" class="headerlink" title="不断学习， 保持亢奋"></a>不断学习， 保持亢奋</h2><p>简单的说就是多读书，读好书。有人会有这样的疑问，每次都是看了圣贤书，打了鸡血后奋斗两天，过去了又低沉下去？很简单就是每过两天读一本圣贤书就行了。</p>
-<p>说的读书， 可能要牵扯到如何读书呢？这个问题一两句说不清， 这里涉及到学习系统。 推荐你一本书 「 <strong>如何阅读一本书</strong> 」。</p>
-<p>有些小伙伴，希望我推荐几本书， 其实我是决绝的。因为每个情况不一样， 好书太多。你多读就是，总有一天你会找到适合你的书。 </p>
-<h2 id="拜访比你层次高的人，-哪怕是付费的"><a href="#拜访比你层次高的人，-哪怕是付费的" class="headerlink" title="拜访比你层次高的人， 哪怕是付费的"></a>拜访比你层次高的人， 哪怕是付费的</h2><p>好的导师能够看到你自己看不到的地方。人这一辈子，很少人能给自己一个清晰的评价和认知，要么高估自己，要么低估自己，而旁观者，尤其是老师，往往能够看到你的弱点、长处，可以给你提醒和指导，少走弯路。所以在你这里的迷茫， 在他那里可能找有答案，交流很重要。</p>
-<p>那么问题来了， 怎么找好的导师呢？几种方式都行， 一种是公司高层， 既然能做到这个位置， 肯定有他牛 X 的地方。 如果你不认同他的，你也要学会去聆听，如果这样也做不到，那就是你的问题。</p>
-<p>另一种在网上能找到， 一般主要的社交平台上都有他们的账号， 如微博、知乎等。 他们一般都有自己的微信公众号，和不同形式的社群（一般都是付费的）。为什么要付费？能迅速筛选目标用户，顺便挣点零花钱，这样他们才能持久输出，毕竟都要生活。</p>
-<p>还有真正最牛叉的， 一般网上都找不到他们， 原因很简单就是他们太忙， 根本没有时间扯淡，一般这样的人目标就是我们先挣它，一个亿，呵呵，开个玩笑， 不过你大概知道他们是什么级别的喽 。不过我们现在可以不考虑，等你到了那个 level， 你才可以进入他圈子， 是的， 他们有圈子， 属于他们自己的圈子。</p>
-<h2 id="行动，再行动"><a href="#行动，再行动" class="headerlink" title="行动，再行动"></a>行动，再行动</h2><p>仅仅读书时不够和请教导师是不够的，他们给你的一个方向， 你一定要去跟着做， 一定要在路上。就像你仅仅看篮球视频， 你不去练习，永远不会上篮。 </p>
-<p>很重要，很重要，很重要！</p>
-<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p><strong>好多人会说， 上面的道理我都知道， 就是做不到。 告诉你其实道理你不知道， 那时别人的道理，不是你的。如果你真知道，你就会去做。</strong></p>
-<p><strong>如果有太多问题想不明白、想不开， 解决办法只有一个， 认真思考，不断的思考、不停地思考，等到活的久了， 想明白的事情多了， 就不那么迷茫了</strong>。</p>
-<p>祝大家不那么迷茫！</p>
-<p>PS：<br>最近在整理设计模式，刚刚开始，等写好后分享给大家， 大家可以关注我的 GitHub，我在一点点整理，如果有兴趣的可以一起。<br><a href="https://github.com/jasonim/design-patterns" target="_blank" rel="external"><strong>项目地址</strong></a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      你曾经迷茫吗？
-    
-    </summary>
-    
-      <category term="杂谈" scheme="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="随笔" scheme="http://hujiandong.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
