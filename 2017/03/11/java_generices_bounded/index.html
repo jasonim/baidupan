@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="JasonThink's Blog" type="application/atom+xml" />
 
@@ -94,7 +96,7 @@
 <meta property="og:description" content="你了解泛型通配符与上下界吗？">
 <meta property="og:image" content="http://7xnilf.com1.z0.glb.clouddn.com/upper.png">
 <meta property="og:image" content="http://7xnilf.com1.z0.glb.clouddn.com/lower.png">
-<meta property="og:updated_time" content="2017-03-11T08:34:05.000Z">
+<meta property="og:updated_time" content="2017-03-15T01:57:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你了解泛型通配符与上下界吗？">
 <meta name="twitter:description" content="你了解泛型通配符与上下界吗？">
@@ -372,7 +374,7 @@
 <p>接下来下面我们来聊聊 Java 泛型的通配符， 记得刚开始看到通配符（？）时我是惊喜的，因为既然有通配符那么就可以这样定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSometing</span><span class="params">(List&lt;?&gt; list)</span> </span>&#123;</div><div class="line">	list.add(<span class="number">1</span>); <span class="comment">//illegal</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可是我们如上写法，总是出现编译错误，然后从惊喜变成惊吓，心想有什么卵用了。最后发现原因是在于通配符的表示的类型是未知的。那在这种情况下，我们可以使用上下界来限制未知类型的范围。好吧，写了那么多， 终于等到今天的主角登场了，容易吗？</p>
 <p>还记得我们上面定义的 Box 吗， 现在我们再定义 Fruit 类以及它的子类 Orange 类。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123; &#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Orange</span> <span class="keyword">extends</span> <span class="title">Fruit</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>现在我们想它里面能装水果，那么我可以这么写。<br><code>Box&lt;Fruit&gt; box = Box&lt;Orange&gt;(new Orange) //illegal</code></p>
+<p>现在我们想它里面能装水果，那么我可以这么写。<br><code>Box&lt;Fruit&gt; box = new Box&lt;Orange&gt;(new Orange()) //illegal</code></p>
 <p>不幸的是编译器会报错，这就尴尬了，why？why？ why？实际上，编译器认为的容器之间没有继承关系。所以我们不能这样做。</p>
 <p>为了解决这样的问题， 大神们想出来了&lt;? extens T&gt; 和 &lt;? super T&gt; 的办法，来让它们之间发生关系。</p>
 <h2 id="上界通配符（Upper-Bounded-Wildcards）"><a href="#上界通配符（Upper-Bounded-Wildcards）" class="headerlink" title="上界通配符（Upper Bounded Wildcards）"></a>上界通配符（Upper Bounded Wildcards）</h2><p>现在我们把上面的 Box 定义改成：<br><code>Box&lt;? extends Fruit&gt;</code></p>
@@ -389,14 +391,14 @@
 <p>因为下界规定元素的最小的粒度，实际上是容器的元素的类型控制。所以放比 Fruit 粒度小的如 Orange、Apple 都行， 但往外取时， 只有所有类的基类Object对象才能装下。但是这样的话，元素的类型信息就全部消失了。</p>
 <h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>在使用泛型的时候可以遵循一些基本的原则，从而避免一些常见的问题。</p>
 <ul>
-<li>在代码中避免泛型类和原始类型的混用。比如List<string>和List不应该共同使用。这样会产生一些编译器警告和潜在的运行时异常。当需要利用JDK 5之前开发的遗留代码，而不得不这么做时，也尽可能的隔离相关的代码。</string></li>
+<li>在代码中避免泛型类和原始类型的混用。比如 List<string> 和 List 不应该共同使用。这样会产生一些编译器警告和潜在的运行时异常。当需要利用 JDK 5 之前开发的遗留代码，而不得不这么做时，也尽可能的隔离相关的代码。</string></li>
 <li>在使用带通配符的泛型类的时候，需要明确通配符所代表的一组类型的概念。由于具体的类型是未知的，很多操作是不允许的。</li>
-<li>泛型类最好不要同数组一块使用。你只能创建new List&lt;?&gt;[10]这样的数组，无法创建new List<string>[10]这样的。这限制了数组的使用能力，而且会带来很多费解的问题。因此，当需要类似数组的功能时候，使用集合类即可。</string></li>
+<li>泛型类最好不要同数组一块使用。你只能创建 new List&lt;?&gt;[10] 这样的数组，无法创建 new List<string>[10] 这样的。这限制了数组的使用能力，而且会带来很多费解的问题。因此，当需要类似数组的功能时候，使用集合类即可。</string></li>
 <li>不要忽视编译器给出的警告信息。</li>
 </ul>
 <h3 id="PECS-原则"><a href="#PECS-原则" class="headerlink" title="PECS 原则"></a>PECS 原则</h3><p>如果要从集合中读取类型T的数据， 并且不能写入，可以使用 上界通配符（&lt;？extends&gt;）—Producer Extends。</p>
 <p>如果要从集合中写入类型T 的数据， 并且不需要读取，可以使用下界通配符（&lt;? super&gt;）—Consumer Super。</p>
-<p>如果既要存又要取， 那么就要使用任何通配符。</p>
+<p>如果既要存又要取， 那么就不要使用任何通配符。</p>
 
       
     </div>
