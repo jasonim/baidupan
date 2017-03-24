@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2017/03/24/android-log-used-debug/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android正确的Log打印姿势—中级篇">
-<meta property="og:updated_time" content="2017-03-24T01:39:21.000Z">
+<meta property="og:updated_time" content="2017-03-24T01:40:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android正确的Log打印姿势—中级篇">
 <meta name="twitter:description" content="Android正确的Log打印姿势—中级篇">
@@ -363,7 +363,7 @@
 <blockquote>
 <p><code>adb shell setprop log.tag.MYTAG D</code></p>
 </blockquote>
-<h2 id="第三种-BuildConfig-DEBUG"><a href="#第三种-BuildConfig-DEBUG" class="headerlink" title="第三种 BuildConfig.DEBUG"></a>第三种 BuildConfig.DEBUG</h2><p>我们直到 Debug 模式下 BuildConfig.DEBUG 会始终为 true。我们将上面的代码改造一下， 只需要修改 isDubug(）函数：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDebug</span><span class="params">(<span class="keyword">int</span> level)</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="第三种-BuildConfig-DEBUG"><a href="#第三种-BuildConfig-DEBUG" class="headerlink" title="第三种 BuildConfig.DEBUG"></a>第三种 BuildConfig.DEBUG</h2><p>我们直到 Debug 模式下 BuildConfig.DEBUG 会始终为 true。我们将上面的代码改造一下， 只需要修改 isDubug(）函数：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDebug</span><span class="params">(<span class="keyword">int</span> level)</span> </span>&#123;</div><div class="line">    retrun level &gt;= LEVEL &amp;&amp; BuildConfig.DEBUG;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
