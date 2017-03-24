@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/03/24/android-log-used-debug/</loc>
+    
+    <lastmod>2017-03-24T01:20:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2017/03/11/java_generices_bounded/</loc>
     
     <lastmod>2017-03-15T01:57:42.000Z</lastmod>
@@ -100,14 +107,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/04/10/how_code_auto_test/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
+    <loc>http://hujiandong.com/2016/02/15/hongbao/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
+    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/05/10/android-dagger/</loc>
+    <loc>http://hujiandong.com/tags/index.html</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -254,14 +254,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    <loc>http://hujiandong.com/2016/04/10/how_code_auto_test/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/02/15/hongbao/</loc>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/tags/index.html</loc>
+    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
+    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -450,6 +450,13 @@
   </url>
   
   <url>
+    <loc>http://hujiandong.com/2015/09/10/smartpointer/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
@@ -471,14 +478,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/07/12/2015-7-12-andorid-note/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2015/07/12/2015-7-12-andorid-note/</loc>
     
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     

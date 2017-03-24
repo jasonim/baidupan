@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-03-15T01:57:42.000Z</updated>
+  <updated>2017-03-24T01:20:02.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android正确的Log打印姿势—中级篇</title>
+    <link href="http://hujiandong.com/2017/03/24/android-log-used-debug/"/>
+    <id>http://hujiandong.com/2017/03/24/android-log-used-debug/</id>
+    <published>2017-03-24T00:30:16.000Z</published>
+    <updated>2017-03-24T01:20:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前写过<a href="http://hujiandong.com/2016/11/07/android-log-used/"><strong>Android Log打印的正确姿势</strong></a>， 今天我们来谈谈怎么控制 Log 的输出?</p>
+<p>第一种：自定义常量， 例如将配置文件放到 asset 下，里面配置是否需要打开 log，Debug 设为 true，Release 设为 false。</p>
+<p>第二种：通过 Log.isLogable 去判断，每次需要手动开启。</p>
+<p>第三种：Gradle 中 BuildConfig.DEBUG 判断是否是 Debug 模式， 从而做到一些在 Debug 模式下开启， 这样好处是不用再发布前去主动修改。</p>
+<p>第一种类似最原始的方式，每次生产环境和开发环境下切换，容易出错，另外在给其他模块提供服务时也不会通用。人类是个不靠谱的东西，机器才是我们目前为止更应该相信的。例如我们经常说的：</p>
+<blockquote>
+<p><strong>作为研发不要相信产品、作为测试不要相信研发、作为运维谁都不要相信、作为产品谁都不要相信…</strong></p>
+</blockquote>
+<p>今天我们就不讨论第一种模式，着重说说第二种和第三种情况， 并讨论他们的优缺点。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      Android正确的Log打印姿势—中级篇
+    
+    </summary>
+    
+      <category term="Android" scheme="http://hujiandong.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>你了解泛型通配符与上下界吗？</title>
@@ -956,18 +987,44 @@
   </entry>
   
   <entry>
-    <title>Android常用的开源项目及其比较系列-序列化篇</title>
-    <link href="http://hujiandong.com/2016/11/07/android-open-source-serial/"/>
-    <id>http://hujiandong.com/2016/11/07/android-open-source-serial/</id>
+    <title>Android Log打印的正确姿势</title>
+    <link href="http://hujiandong.com/2016/11/07/android-log-used/"/>
+    <id>http://hujiandong.com/2016/11/07/android-log-used/</id>
     <published>2016-11-07T08:48:27.000Z</published>
     <updated>2016-11-07T08:48:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在进入今天的主题之前我们来说一下当下比较火的话题， 一个AR类游戏刷爆国外网络社交平台？是的，它就是<strong>Pokemon Go</strong>，中文意思就是皮卡丘；一个抓精灵手游，通过你的位置信息，根据不同场景的显示不同精灵。不过可惜国内没有开服，听说东北一些地区可以玩。本来不怎么关注游戏的， 也荡起涟漪想体验体验。另一个就是和电影明星赵薇相关的，大家都称“赵薇事件”，一个微博电影宣传照引发的事件。事情刚开始时本来想写一点对此事一些看法的，但还没来得及写，整个事情就像我想想的方向发展了。你猜猜还会不会再次反转，你们还是洗洗睡吧；所以你会发现有些东西不一定是我们看到的， 特别是涉及到政治相关的。</p>
-<h1 id="动态注入"><a href="#动态注入" class="headerlink" title="动态注入"></a>动态注入</h1><h2 id="AndroidAnnotations"><a href="#AndroidAnnotations" class="headerlink" title="AndroidAnnotations"></a>AndroidAnnotations</h2><h2 id="butterknife"><a href="#butterknife" class="headerlink" title="butterknife"></a>butterknife</h2><h2 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h2><h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><h2 id="Jackjson"><a href="#Jackjson" class="headerlink" title="Jackjson"></a>Jackjson</h2><h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h2 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h2>]]></content>
+    <content type="html"><![CDATA[<p>大家对输出Log肯定不陌生吧， 任何语言任何程序都少不了Log读出， 程序交付前我们可以用它来调试code， 交付后我们可以用它来排除问题。记得当时用C写程序时，我们经常唱“print 大法好哎！print 大法好哎！print 大法好哎！”</p>
+<p>Log 的输出是耗时的， 正确的Log打印可以提供工作效率，反之会带来副作用，所以要善用Log打印。有人把程序员分为五类，你可能多多少少有它们中一类或多类的影子。</p>
+<blockquote>
+<ul>
+<li>IDD（IDE-Driven Development），也就是IDE驱动开发，几乎是初学者进入软件开发的殿堂的必经之路。IDE开发者屏蔽了很多细节，并且几乎不用配置（相对于 vim / emacs / sublime）就可以使用代码自动补全，代码跳转，搜索，以及签入签出等软件开发中将会使用到的几乎所有工作。</li>
+<li>DDD（Debugger-Driven Development）<br>DDD，面向调试器开发，是 IDD 依赖到一定程度的必然反应。这种开发模式的典型表现为：写出来的代码不知道对不对，从头到尾设置无数个断点，然后进入到调试模式，一个断点一个断点跟踪。发现一个问题，解决一个问题（也许引入一个新的问题），直到所有断点走数遍，所有遇到的问题被消灭，抹一抹头上的汗，心里骂上一句：妈的，这段代码老子（娘）终于调通了！</li>
+<li>BDD（Bug-Driven Development）<br>看到 BDD，也就是问题单驱动开发，相信大家都相视一笑。本来这里我想用 TDD（Ticket-Driven Development），更接近我的原意，为了不和 Test-Driven Development 混淆，故而只好改成 BDD。这可能是我们最熟悉的开发模式了 —— 在一个业务稳定的软件公司（甭管规模大小），勉力维护现有的代码，小心地添加新功能是多数程序员的主要职责。在这些公司里，与其说我们是工程师，不如说我们是补锅匠。看不懂代码？没关系，只要你会读日志（出错信息）；解决不了问题？不打紧，能找到 workaround 把问题绕过去也可以，更有甚者，遇到神问题，看不懂，想不明，解不了，还没有 workaround，大笔一挥：not reproducible，就把问题关了，几个月半年后，说不定自己已经去补别的锅了。</li>
+<li>RDD（Rat-race-game-Driven Development）<br>RDD，老鼠赛跑驱动的开发，是指那些整个职业生涯都在原地打转的开发模式。Rat race game 是『富爸爸穷爸爸』中的经典例子 —— 老鼠在环形的笼子里拼命地奔跑。</li>
+</ul>
+</blockquote>
+<p>如想了解更多， 请参见<a href="http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;mid=402343575&amp;idx=1&amp;sn=cf5bd19b7eb979c0904692475c5f997d&amp;scene=0#wechat_redirect" target="_blank" rel="external">原文</a>, 看看作者怎么分析每类人的， 你值得拥有。 </p>
+<p>好了， 来说说Android的Log打印的一些方法和技巧，为了简单起见，下文中AS就是Android Studio的缩写。</p>
+<h1 id="善用adb-logcat"><a href="#善用adb-logcat" class="headerlink" title="善用adb logcat"></a>善用adb logcat</h1><p>我看到有些测试人员为了，看程序的Log， 还特意装一个AS。有时候想问为什么不用adb logcat，难道是没有linux下的shell命令吗， 好吧， 被你的无邪打败了。</p>
+<p>有时候我们要看一个Java层的奔溃，我仅仅需要下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat | grep -i &quot;system.err&quot;</div></pre></td></tr></table></figure>
+<p>想看看别的，使用process输出格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat -v process</div></pre></td></tr></table></figure>
+<h1 id="AS-使用技巧"><a href="#AS-使用技巧" class="headerlink" title="AS 使用技巧"></a>AS 使用技巧</h1><p>AS提供了很多的模板功能, 自己也可以根据情况自己定义：</p>
+<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/live-template.png" alt="template设置"></p>
+<p>自动填写Tag、方法名和返回值：</p>
+<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/log.gif" alt=""></p>
+<h1 id="动态设置值"><a href="#动态设置值" class="headerlink" title="动态设置值"></a>动态设置值</h1><p>你在调试时会不也遇到这样的情况，为了进入不同分支，最笨的办法是每次都有修改一下条件变量的代码， 然后重新编译运行。现在我们可以利用debug的setValue(Mac F2)方法动态设置值, 下面代码 变量b 开始等于0， 正常情况下会进入catch条件; 现在我将它修改为2， 它就不会进入catch条件了。</p>
+<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/setvalue.gif" alt=""> </p>
+<h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><p>你可以用第三方库（<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>、<a href="https://github.com/pengwei1024/LogUtils" target="_blank" rel="external">LogUtils</a>、<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>）或自己改造log框架， 让打印更美观。</p>
+<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/logger-log.png" alt="Logger效果图"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一万个人心中有一万个丘比特，所有找到一个自己适合的打印方式。</p>
+<p><strong>希望大家使用愉快！</strong></p>
+]]></content>
     
     <summary type="html">
     
-      介绍常用的序列化框架和注解框架
+      Android Log打印的正确姿势
     
     </summary>
     
@@ -975,8 +1032,6 @@
     
     
       <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
-    
-      <category term="开源项目" scheme="http://hujiandong.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -1172,44 +1227,18 @@
   </entry>
   
   <entry>
-    <title>Android Log打印的正确姿势</title>
-    <link href="http://hujiandong.com/2016/11/07/android-log-used/"/>
-    <id>http://hujiandong.com/2016/11/07/android-log-used/</id>
+    <title>Android常用的开源项目及其比较系列-序列化篇</title>
+    <link href="http://hujiandong.com/2016/11/07/android-open-source-serial/"/>
+    <id>http://hujiandong.com/2016/11/07/android-open-source-serial/</id>
     <published>2016-11-07T08:48:27.000Z</published>
     <updated>2016-11-07T08:48:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>大家对输出Log肯定不陌生吧， 任何语言任何程序都少不了Log读出， 程序交付前我们可以用它来调试code， 交付后我们可以用它来排除问题。记得当时用C写程序时，我们经常唱“print 大法好哎！print 大法好哎！print 大法好哎！”</p>
-<p>Log 的输出是耗时的， 正确的Log打印可以提供工作效率，反之会带来副作用，所以要善用Log打印。有人把程序员分为五类，你可能多多少少有它们中一类或多类的影子。</p>
-<blockquote>
-<ul>
-<li>IDD（IDE-Driven Development），也就是IDE驱动开发，几乎是初学者进入软件开发的殿堂的必经之路。IDE开发者屏蔽了很多细节，并且几乎不用配置（相对于 vim / emacs / sublime）就可以使用代码自动补全，代码跳转，搜索，以及签入签出等软件开发中将会使用到的几乎所有工作。</li>
-<li>DDD（Debugger-Driven Development）<br>DDD，面向调试器开发，是 IDD 依赖到一定程度的必然反应。这种开发模式的典型表现为：写出来的代码不知道对不对，从头到尾设置无数个断点，然后进入到调试模式，一个断点一个断点跟踪。发现一个问题，解决一个问题（也许引入一个新的问题），直到所有断点走数遍，所有遇到的问题被消灭，抹一抹头上的汗，心里骂上一句：妈的，这段代码老子（娘）终于调通了！</li>
-<li>BDD（Bug-Driven Development）<br>看到 BDD，也就是问题单驱动开发，相信大家都相视一笑。本来这里我想用 TDD（Ticket-Driven Development），更接近我的原意，为了不和 Test-Driven Development 混淆，故而只好改成 BDD。这可能是我们最熟悉的开发模式了 —— 在一个业务稳定的软件公司（甭管规模大小），勉力维护现有的代码，小心地添加新功能是多数程序员的主要职责。在这些公司里，与其说我们是工程师，不如说我们是补锅匠。看不懂代码？没关系，只要你会读日志（出错信息）；解决不了问题？不打紧，能找到 workaround 把问题绕过去也可以，更有甚者，遇到神问题，看不懂，想不明，解不了，还没有 workaround，大笔一挥：not reproducible，就把问题关了，几个月半年后，说不定自己已经去补别的锅了。</li>
-<li>RDD（Rat-race-game-Driven Development）<br>RDD，老鼠赛跑驱动的开发，是指那些整个职业生涯都在原地打转的开发模式。Rat race game 是『富爸爸穷爸爸』中的经典例子 —— 老鼠在环形的笼子里拼命地奔跑。</li>
-</ul>
-</blockquote>
-<p>如想了解更多， 请参见<a href="http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;mid=402343575&amp;idx=1&amp;sn=cf5bd19b7eb979c0904692475c5f997d&amp;scene=0#wechat_redirect" target="_blank" rel="external">原文</a>, 看看作者怎么分析每类人的， 你值得拥有。 </p>
-<p>好了， 来说说Android的Log打印的一些方法和技巧，为了简单起见，下文中AS就是Android Studio的缩写。</p>
-<h1 id="善用adb-logcat"><a href="#善用adb-logcat" class="headerlink" title="善用adb logcat"></a>善用adb logcat</h1><p>我看到有些测试人员为了，看程序的Log， 还特意装一个AS。有时候想问为什么不用adb logcat，难道是没有linux下的shell命令吗， 好吧， 被你的无邪打败了。</p>
-<p>有时候我们要看一个Java层的奔溃，我仅仅需要下面命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat | grep -i &quot;system.err&quot;</div></pre></td></tr></table></figure>
-<p>想看看别的，使用process输出格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat -v process</div></pre></td></tr></table></figure>
-<h1 id="AS-使用技巧"><a href="#AS-使用技巧" class="headerlink" title="AS 使用技巧"></a>AS 使用技巧</h1><p>AS提供了很多的模板功能, 自己也可以根据情况自己定义：</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/live-template.png" alt="template设置"></p>
-<p>自动填写Tag、方法名和返回值：</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/log.gif" alt=""></p>
-<h1 id="动态设置值"><a href="#动态设置值" class="headerlink" title="动态设置值"></a>动态设置值</h1><p>你在调试时会不也遇到这样的情况，为了进入不同分支，最笨的办法是每次都有修改一下条件变量的代码， 然后重新编译运行。现在我们可以利用debug的setValue(Mac F2)方法动态设置值, 下面代码 变量b 开始等于0， 正常情况下会进入catch条件; 现在我将它修改为2， 它就不会进入catch条件了。</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/setvalue.gif" alt=""> </p>
-<h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><p>你可以用第三方库（<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>、<a href="https://github.com/pengwei1024/LogUtils" target="_blank" rel="external">LogUtils</a>、<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>）或自己改造log框架， 让打印更美观。</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/logger-log.png" alt="Logger效果图"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一万个人心中有一万个丘比特，所有找到一个自己适合的打印方式。</p>
-<p><strong>希望大家使用愉快！</strong></p>
-]]></content>
+    <content type="html"><![CDATA[<p>在进入今天的主题之前我们来说一下当下比较火的话题， 一个AR类游戏刷爆国外网络社交平台？是的，它就是<strong>Pokemon Go</strong>，中文意思就是皮卡丘；一个抓精灵手游，通过你的位置信息，根据不同场景的显示不同精灵。不过可惜国内没有开服，听说东北一些地区可以玩。本来不怎么关注游戏的， 也荡起涟漪想体验体验。另一个就是和电影明星赵薇相关的，大家都称“赵薇事件”，一个微博电影宣传照引发的事件。事情刚开始时本来想写一点对此事一些看法的，但还没来得及写，整个事情就像我想想的方向发展了。你猜猜还会不会再次反转，你们还是洗洗睡吧；所以你会发现有些东西不一定是我们看到的， 特别是涉及到政治相关的。</p>
+<h1 id="动态注入"><a href="#动态注入" class="headerlink" title="动态注入"></a>动态注入</h1><h2 id="AndroidAnnotations"><a href="#AndroidAnnotations" class="headerlink" title="AndroidAnnotations"></a>AndroidAnnotations</h2><h2 id="butterknife"><a href="#butterknife" class="headerlink" title="butterknife"></a>butterknife</h2><h2 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h2><h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><h2 id="Jackjson"><a href="#Jackjson" class="headerlink" title="Jackjson"></a>Jackjson</h2><h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h2 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h2>]]></content>
     
     <summary type="html">
     
-      Android Log打印的正确姿势
+      介绍常用的序列化框架和注解框架
     
     </summary>
     
@@ -1217,6 +1246,8 @@
     
     
       <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
+    
+      <category term="开源项目" scheme="http://hujiandong.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -1405,71 +1436,6 @@
     
     
       <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用 Markdown here 排版微信公众号</title>
-    <link href="http://hujiandong.com/2016/10/20/markdown-here/"/>
-    <id>http://hujiandong.com/2016/10/20/markdown-here/</id>
-    <published>2016-10-20T12:30:16.000Z</published>
-    <updated>2016-11-07T08:48:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>以前写的文章一般都会发到个人Blog上面去， 并没有发到微信公众号上面前。当然微信公众号的排版一直是让人头痛的问题， 我也知道现在是移动互联网时代， 微信的时代。 有没有小伙在公众号排版上发费的时间超过半个小时以上的？我先默默举个手。 微信公众号申请一年多时间也没有发布几篇文字。有网友在后台给我留言问，问我你微信公众号是多， 一般回答都是xx， 然后默默补上一句里面没几篇文字。</p>
-<p>直到突然的某天，在知乎上发现有人说微信后台支持 Markdown 格式（不知道，没关系，下面我们再说，下面的文章 Markdown 简称 MD），当时心里窃喜还专门尝试了一下， 拷贝一段含有 MD 格式的文字， 预览发现不起作用，心里想是不是骗人的， 不科学啊。最后搜索发现可以用 Markdown here 工具将 MD 格式的转换一下。这样微信排版只需要几分钟就可以搞定了。在我们说Markdown here 之前来介绍一下 Markdown， 它才是以后一切的前提啊。</p>
-<h2 id="关于Markdown"><a href="#关于Markdown" class="headerlink" title="关于Markdown"></a>关于Markdown</h2><p>维基：</p>
-<blockquote>
-<p>Markdown 是一种轻量级标记语言, 它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
-</blockquote>
-<p>总之就是方便写作，在没用 MD 之前，我是用 Emacs Org-mode 编辑文字和做 TODO list 任务管理。突然某天我发现好多网站后台都支持 MD 了，如简书、Mynote、CSDN等，然后我就这样学习了 MD，并喜欢上它。其实 MD 语法也很简单， 关于 MD 的教程，可以去看看这篇文章：</p>
-<blockquote>
-<p>[<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a>] </p>
-</blockquote>
-<h2 id="Markdown-编辑器"><a href="#Markdown-编辑器" class="headerlink" title="Markdown 编辑器"></a>Markdown 编辑器</h2><p>其实我最开始用时是 emacs markdown-mode 并加入一些 snippets,  感觉很好。后来 MalkTalk 推荐的写作工具 Ulysses，尝试一下发现它有如下优点：</p>
-<ul>
-<li>界面友好</li>
-<li>多终端同步</li>
-<li>强大的搜索、统计功能</li>
-</ul>
-<p>写作我现在一般也用它， 可惜它有点贵。 推荐好评比较多的免费 Markdown 编辑器，下面的两款软件我没有用过，大家可以去试一下，来告诉我， 应该是不错的。<br>Sublime Text 2 + MarkdownEditing/Atom，下面使他们的教程。<br>Sublime Text 2：</p>
-<blockquote>
-<p>[<a href="http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/" target="_blank" rel="external">http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/</a>]<br>Atom:<br><a href="http://xiaolai.li/2016/06/17/makecs-atom-advanced/" target="_blank" rel="external">http://xiaolai.li/2016/06/17/makecs-atom-advanced/</a></p>
-</blockquote>
-<p>多说一句，工具是解决问题而产生的，选择一个适合你的就行， 如果没找到，就不断的尝试。</p>
-<h2 id="Markdown-here"><a href="#Markdown-here" class="headerlink" title="Markdown here"></a>Markdown here</h2><p>Markdown here  是个浏览器插件（Chrome/Firefox/Safari），可以将浏览器中编辑器里的 Markdown 文本转换成渲染过后的 HTML。还能自定义 CSS，对应经常使用 Markdown 格式的人来说， 确实是很爽， 你写邮件、文档等用 Markdown 。</p>
-<p>装好插件以后， 下面我们只需要下面几步就可是帮你在微信公众号上排版：</p>
-<ol>
-<li>将上面写好的拷贝粘贴到微信公共帐号的编辑器中</li>
-<li>Ctrl+Alt+M 使用 Markdown Here 渲染</li>
-<li>插入图片</li>
-</ol>
-<p>Markdown here 默认 CSS 和 Github 的显示样式一样，当然上面我们说过可以自定义 CSS 达到想要的效果。</p>
-<h2 id="自定义CSS"><a href="#自定义CSS" class="headerlink" title="自定义CSS"></a>自定义CSS</h2><p>Chrome修改路径： </p>
-<blockquote>
-<p>Chrome → 设置 → 扩展程序 → markdown.here → 选项 → 基本渲染 CSS </p>
-</blockquote>
-<p>主要对字体大小、行间距、字间距、字体颜色做修改就可以。总结原则如下：</p>
-<ul>
-<li>文章正文的字号最好在14—18px之间，以16px最为合适。</li>
-<li>行间距：1.5-1.75倍的行距看起来会比较舒服。</li>
-<li>移动端的文章均无需首行缩进。</li>
-<li>段落之间最好空一行。</li>
-</ul>
-<p>推荐几个人的 Markdown here 自定义样式吧。<br><a href="https://github.com/veganshe/CodeBlock/blob/master/Markdown-here/markdown-here-yzp.css" target="_blank" rel="external">阳志平</a><br><a href="https://gist.github.com/xiaolai/aa190255b7dde302d10208ae247fc9f2" target="_blank" rel="external">李笑来版</a></p>
-<p>如果你现在使用的是 Web 版的邮箱，你也可以 Markdown 来书写你的邮件内容，在最后通过 Markdown Here 一键渲染，格式化邮件样式。</p>
-<p>祝大家使用愉快！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      Markdown here 使用和配置
-    
-    </summary>
-    
-      <category term="工具" scheme="http://hujiandong.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Markdown" scheme="http://hujiandong.com/tags/Markdown/"/>
     
   </entry>
   

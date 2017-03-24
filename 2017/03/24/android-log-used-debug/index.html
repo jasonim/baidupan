@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,开源项目," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="介绍常用的序列化框架和注解框架">
+<meta name="description" content="Android正确的Log打印姿势—中级篇">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android常用的开源项目及其比较系列-序列化篇">
-<meta property="og:url" content="http://hujiandong.com/2016/11/07/android-open-source-serial/index.html">
+<meta property="og:title" content="Android正确的Log打印姿势—中级篇">
+<meta property="og:url" content="http://hujiandong.com/2017/03/24/android-log-used-debug/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
-<meta property="og:description" content="介绍常用的序列化框架和注解框架">
-<meta property="og:updated_time" content="2016-11-07T08:48:27.000Z">
+<meta property="og:description" content="Android正确的Log打印姿势—中级篇">
+<meta property="og:updated_time" content="2017-03-24T01:20:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android常用的开源项目及其比较系列-序列化篇">
-<meta name="twitter:description" content="介绍常用的序列化框架和注解框架">
+<meta name="twitter:title" content="Android正确的Log打印姿势—中级篇">
+<meta name="twitter:description" content="Android正确的Log打印姿势—中级篇">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://hujiandong.com/2016/11/07/android-open-source-serial/"/>
+  <link rel="canonical" href="http://hujiandong.com/2017/03/24/android-log-used-debug/"/>
 
 
-  <title> Android常用的开源项目及其比较系列-序列化篇 | JasonThink's Blog </title>
+  <title> Android正确的Log打印姿势—中级篇 | JasonThink's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
             
             
               
-                Android常用的开源项目及其比较系列-序列化篇
+                Android正确的Log打印姿势—中级篇
               
             
           </h1>
@@ -284,8 +284,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-07T16:48:27+08:00" content="2016-11-07">
-              2016-11-07
+            <time itemprop="dateCreated" datetime="2017-03-24T08:30:16+08:00" content="2017-03-24">
+              2017-03-24
             </time>
           </span>
 
@@ -314,8 +314,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/07/android-open-source-serial/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/07/android-open-source-serial/" itemprop="commentsCount"></span>
+                <a href="/2017/03/24/android-log-used-debug/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/24/android-log-used-debug/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,7 +325,7 @@
 
           
           
-             <span id="/2016/11/07/android-open-source-serial/" class="leancloud_visitors" data-flag-title="Android常用的开源项目及其比较系列-序列化篇">
+             <span id="/2017/03/24/android-log-used-debug/" class="leancloud_visitors" data-flag-title="Android正确的Log打印姿势—中级篇">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -347,8 +347,16 @@
       
 
       
-        <p>在进入今天的主题之前我们来说一下当下比较火的话题， 一个AR类游戏刷爆国外网络社交平台？是的，它就是<strong>Pokemon Go</strong>，中文意思就是皮卡丘；一个抓精灵手游，通过你的位置信息，根据不同场景的显示不同精灵。不过可惜国内没有开服，听说东北一些地区可以玩。本来不怎么关注游戏的， 也荡起涟漪想体验体验。另一个就是和电影明星赵薇相关的，大家都称“赵薇事件”，一个微博电影宣传照引发的事件。事情刚开始时本来想写一点对此事一些看法的，但还没来得及写，整个事情就像我想想的方向发展了。你猜猜还会不会再次反转，你们还是洗洗睡吧；所以你会发现有些东西不一定是我们看到的， 特别是涉及到政治相关的。</p>
-<h1 id="动态注入"><a href="#动态注入" class="headerlink" title="动态注入"></a>动态注入</h1><h2 id="AndroidAnnotations"><a href="#AndroidAnnotations" class="headerlink" title="AndroidAnnotations"></a>AndroidAnnotations</h2><h2 id="butterknife"><a href="#butterknife" class="headerlink" title="butterknife"></a>butterknife</h2><h2 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h2><h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><h2 id="Jackjson"><a href="#Jackjson" class="headerlink" title="Jackjson"></a>Jackjson</h2><h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h2 id="Protobuf"><a href="#Protobuf" class="headerlink" title="Protobuf"></a>Protobuf</h2>
+        <p>以前写过<a href="http://hujiandong.com/2016/11/07/android-log-used/"><strong>Android Log打印的正确姿势</strong></a>， 今天我们来谈谈怎么控制 Log 的输出?</p>
+<p>第一种：自定义常量， 例如将配置文件放到 asset 下，里面配置是否需要打开 log，Debug 设为 true，Release 设为 false。</p>
+<p>第二种：通过 Log.isLogable 去判断，每次需要手动开启。</p>
+<p>第三种：Gradle 中 BuildConfig.DEBUG 判断是否是 Debug 模式， 从而做到一些在 Debug 模式下开启， 这样好处是不用再发布前去主动修改。</p>
+<p>第一种类似最原始的方式，每次生产环境和开发环境下切换，容易出错，另外在给其他模块提供服务时也不会通用。人类是个不靠谱的东西，机器才是我们目前为止更应该相信的。例如我们经常说的：</p>
+<blockquote>
+<p><strong>作为研发不要相信产品、作为测试不要相信研发、作为运维谁都不要相信、作为产品谁都不要相信…</strong></p>
+</blockquote>
+<p>今天我们就不讨论第一种模式，着重说说第二种和第三种情况， 并讨论他们的优缺点。</p>
+
       
     </div>
 
@@ -377,8 +385,6 @@
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/开源项目/" rel="tag">#开源项目</a>
-          
         </div>
       
 
@@ -386,17 +392,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/07/android-continuous-integration-travis/" rel="next" title="Android项目持续集成-Travis CI">
-                <i class="fa fa-chevron-left"></i> Android项目持续集成-Travis CI
+              <a href="/2017/03/11/java_generices_bounded/" rel="next" title="你了解泛型通配符与上下界吗？">
+                <i class="fa fa-chevron-left"></i> 你了解泛型通配符与上下界吗？
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/07/android_open_source_network/" rel="prev" title="Android常用的开源项目及其比较系列-网络篇">
-                Android常用的开源项目及其比较系列-网络篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,10 +413,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/07/android-open-source-serial/"
-     data-title="Android常用的开源项目及其比较系列-序列化篇"
+        <div class="ds-share flat" data-thread-key="2017/03/24/android-log-used-debug/"
+     data-title="Android正确的Log打印姿势—中级篇"
      data-content=""
-     data-url="http://hujiandong.com/2016/11/07/android-open-source-serial/">
+     data-url="http://hujiandong.com/2017/03/24/android-log-used-debug/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -441,8 +443,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/07/android-open-source-serial/"
-           data-title="Android常用的开源项目及其比较系列-序列化篇" data-url="http://hujiandong.com/2016/11/07/android-open-source-serial/">
+      <div class="ds-thread" data-thread-key="2017/03/24/android-log-used-debug/"
+           data-title="Android正确的Log打印姿势—中级篇" data-url="http://hujiandong.com/2017/03/24/android-log-used-debug/">
       </div>
     
   </div>
@@ -557,7 +559,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态注入"><span class="nav-number">1.</span> <span class="nav-text">动态注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AndroidAnnotations"><span class="nav-number">1.1.</span> <span class="nav-text">AndroidAnnotations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#butterknife"><span class="nav-number">1.2.</span> <span class="nav-text">butterknife</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dagger"><span class="nav-number">1.3.</span> <span class="nav-text">Dagger</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序列化"><span class="nav-number">2.</span> <span class="nav-text">序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jackjson"><span class="nav-number">2.1.</span> <span class="nav-text">Jackjson</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gson"><span class="nav-number">2.2.</span> <span class="nav-text">Gson</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protobuf"><span class="nav-number">2.3.</span> <span class="nav-text">Protobuf</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
