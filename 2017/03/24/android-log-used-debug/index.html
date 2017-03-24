@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://hujiandong.com/2017/03/24/android-log-used-debug/index.html">
 <meta property="og:site_name" content="JasonThink's Blog">
 <meta property="og:description" content="Android正确的Log打印姿势—中级篇">
-<meta property="og:updated_time" content="2017-03-24T01:20:02.000Z">
+<meta property="og:updated_time" content="2017-03-24T01:28:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android正确的Log打印姿势—中级篇">
 <meta name="twitter:description" content="Android正确的Log打印姿势—中级篇">
@@ -356,6 +356,8 @@
 <p><strong>作为研发不要相信产品、作为测试不要相信研发、作为运维谁都不要相信、作为产品谁都不要相信…</strong></p>
 </blockquote>
 <p>今天我们就不讨论第一种模式，着重说说第二种和第三种情况， 并讨论他们的优缺点。</p>
+<h2 id="第二种-Log-isLoagable"><a href="#第二种-Log-isLoagable" class="headerlink" title="第二种 Log.isLoagable"></a>第二种 Log.isLoagable</h2><p>直接上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogUtils</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LEVEL = Log.DEBUG;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -559,7 +561,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种-Log-isLoagable"><span class="nav-number">1.</span> <span class="nav-text">第二种 Log.isLoagable</span></a></li></ol></div>
             
           </div>
         </section>

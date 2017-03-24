@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[Android正确的Log打印姿势—中级篇]]></title>
       <url>%2F2017%2F03%2F24%2Fandroid-log-used-debug%2F</url>
-      <content type="text"><![CDATA[以前写过Android Log打印的正确姿势， 今天我们来谈谈怎么控制 Log 的输出? 第一种：自定义常量， 例如将配置文件放到 asset 下，里面配置是否需要打开 log，Debug 设为 true，Release 设为 false。 第二种：通过 Log.isLogable 去判断，每次需要手动开启。 第三种：Gradle 中 BuildConfig.DEBUG 判断是否是 Debug 模式， 从而做到一些在 Debug 模式下开启， 这样好处是不用再发布前去主动修改。 第一种类似最原始的方式，每次生产环境和开发环境下切换，容易出错，另外在给其他模块提供服务时也不会通用。人类是个不靠谱的东西，机器才是我们目前为止更应该相信的。例如我们经常说的： 作为研发不要相信产品、作为测试不要相信研发、作为运维谁都不要相信、作为产品谁都不要相信… 今天我们就不讨论第一种模式，着重说说第二种和第三种情况， 并讨论他们的优缺点。]]></content>
+      <content type="text"><![CDATA[以前写过Android Log打印的正确姿势， 今天我们来谈谈怎么控制 Log 的输出? 第一种：自定义常量， 例如将配置文件放到 asset 下，里面配置是否需要打开 log，Debug 设为 true，Release 设为 false。 第二种：通过 Log.isLogable 去判断，每次需要手动开启。 第三种：Gradle 中 BuildConfig.DEBUG 判断是否是 Debug 模式， 从而做到一些在 Debug 模式下开启， 这样好处是不用再发布前去主动修改。 第一种类似最原始的方式，每次生产环境和开发环境下切换，容易出错，另外在给其他模块提供服务时也不会通用。人类是个不靠谱的东西，机器才是我们目前为止更应该相信的。例如我们经常说的： 作为研发不要相信产品、作为测试不要相信研发、作为运维谁都不要相信、作为产品谁都不要相信… 今天我们就不讨论第一种模式，着重说说第二种和第三种情况， 并讨论他们的优缺点。 第二种 Log.isLoagable直接上代码： 123public class LogUtils &#123; private static final int LEVEL = Log.DEBUG;&#125;]]></content>
     </entry>
 
     
