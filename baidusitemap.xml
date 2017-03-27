@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2017/03/27/seven-year-later/</loc>
+    <lastmod>2017-03-27T01:29:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>七年后你还是你吗</title>
+        <pubTime>2017-03-27T00:30:16.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2017/03/24/android-log-used-debug/</loc>
     <lastmod>2017-03-24T01:41:35.000Z</lastmod>
     <data>
@@ -307,26 +327,6 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Retrofit源码解析（一）</title>
-        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
-        
-        <tag>retrofit</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
@@ -491,26 +491,6 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈工作和生活</title>
-        <pubTime>2015-10-18T07:30:16.000Z</pubTime>
-        
-        <tag>随想</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
@@ -524,26 +504,6 @@
            
              
               <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2016/01/07/git_common_comand_introduce/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>git 常用命令</title>
-        <pubTime>2016-01-07T02:30:16.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://hujiandong.com/categories/git/"/>
           
         </display>
     </data>
@@ -571,6 +531,27 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2016/01/07/git_common_comand_introduce/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 常用命令</title>
+        <pubTime>2016-01-07T02:30:16.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://hujiandong.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://hujiandong.com/2016/03/31/great-tools-for-android-development/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
@@ -590,6 +571,27 @@
     </url>
 
     
+  <url>
+    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android常用的开源项目及其比较-图片加载篇</title>
+        <pubTime>2016-06-18T06:30:16.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>开源项目</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://hujiandong.com/2015/10/12/hack_culture/</loc>
@@ -712,14 +714,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <loc>http://hujiandong.com/2015/10/18/work_life/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>回顾2015</title>
-        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
+        <title>谈谈工作和生活</title>
+        <pubTime>2015-10-18T07:30:16.000Z</pubTime>
         
-        <tag>随笔</tag>
+        <tag>随想</tag>
          
          
            
@@ -1072,12 +1074,12 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/06/18/android-open-source-summary/</loc>
+    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android常用的开源项目及其比较-图片加载篇</title>
-        <pubTime>2016-06-18T06:30:16.000Z</pubTime>
+        <title>Android常用的开源项目及其比较系列-序列化篇</title>
+        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -1134,16 +1136,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/11/07/android-open-source-serial/</loc>
+    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android常用的开源项目及其比较系列-序列化篇</title>
-        <pubTime>2016-11-07T08:48:27.000Z</pubTime>
+        <title>Android 性能优化</title>
+        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
         
         <tag>Android</tag>
-         
-        <tag>开源项目</tag>
          
          
            
@@ -1156,14 +1156,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
+    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android 性能优化</title>
-        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
+        <title>Retrofit源码解析（一）</title>
+        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>retrofit</tag>
          
          
            
@@ -1296,6 +1296,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2015/12/21/summary-2015/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>回顾2015</title>
+        <pubTime>2015-12-21T07:30:16.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
@@ -1338,14 +1358,16 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/05/14/android-auto-test-espresso/</loc>
+    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>android 自动化测试-Espresso</title>
-        <pubTime>2016-05-14T09:20:16.000Z</pubTime>
+        <title>android 直连</title>
+        <pubTime>2015-05-12T07:30:16.000Z</pubTime>
         
-        <tag>自动化测试</tag>
+        <tag>android</tag>
+         
+        <tag>wifi</tag>
          
          
            
@@ -1358,16 +1380,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2015/05/12/2015-05-12-wifi-dirct/</loc>
+    <loc>http://hujiandong.com/2016/05/14/android-auto-test-espresso/</loc>
     <lastmod>2016-11-07T08:48:23.000Z</lastmod>
     <data>
         <display>
-        <title>android 直连</title>
-        <pubTime>2015-05-12T07:30:16.000Z</pubTime>
+        <title>android 自动化测试-Espresso</title>
+        <pubTime>2016-05-14T09:20:16.000Z</pubTime>
         
-        <tag>android</tag>
-         
-        <tag>wifi</tag>
+        <tag>自动化测试</tag>
          
          
            
