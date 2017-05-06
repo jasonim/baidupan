@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-05-06T08:10:43.000Z</updated>
+  <updated>2017-05-06T08:12:36.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hujiandong.com/2017/05/06/evils_live/"/>
     <id>http://hujiandong.com/2017/05/06/evils_live/</id>
     <published>2017-05-06T07:50:53.000Z</published>
-    <updated>2017-05-06T08:10:43.000Z</updated>
+    <updated>2017-05-06T08:12:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>title: 一个视频直播开源项目–EvilsLive<br>date: 2017-04-28 15:30:16<br>categories: 杂谈<br>tags: [杂谈] #文章标签，可空，多标签请用格式，注意:后面有个空格<br>description: 一个视频直播开源项目–EvilsLive</p>
 <p>我在 「<strong><a href="http://hujiandong.com/2017/04/22/learning_fake/">漫无目标的假学习者</a></strong>」 写到：</p>
@@ -46,6 +46,7 @@
 </ul>
 <p>现在仅仅实现部分功能， 项目还将持续更新中…</p>
 <p>其中 Songlcy 小伙伴看到这个项目后问， 如何快速入门音视频，直播？希望这个项目能真正帮助到类似这样的小伙伴，这也是我们继续的动力。下面是我的回答：<br><img src="http://7xnilf.com1.z0.glb.clouddn.com/tiwen.png" alt=""></p>
+<p>小龙同学坐在没有靠背的凳子上 Coding; 阿峰同学笔记本放在被子上或半躺着Coding; 而我坐在垫子上趴在床边Coding。在这个不到 12  平的房间里， 上面的画面不难想象。</p>
 ]]></content>
     
     <summary type="html">
