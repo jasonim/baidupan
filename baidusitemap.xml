@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hujiandong.com/2017/04/22/learning_fake/</loc>
+    <lastmod>2017-05-06T07:48:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>漫无目标的假学习者</title>
+        <pubTime>2017-04-22T07:30:16.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hujiandong.com/2017/04/15/community-talk/</loc>
     <lastmod>2017-04-20T03:06:27.000Z</lastmod>
     <data>
@@ -340,26 +360,6 @@
            
              
               <breadCrumb title="refactor" url="http://hujiandong.com/categories/refactor/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hujiandong.com/2015/09/15/android_import_so/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu Android studio中引入so文件的方法</title>
-        <pubTime>2015-09-15T09:10:00.000Z</pubTime>
-        
-        <tag>android studio</tag>
-         
-         
-           
-             
-              <breadCrumb title="notes" url="http://hujiandong.com/categories/notes/"/>
           
         </display>
     </data>
@@ -736,19 +736,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>android笔记-数据篇</title>
-        <pubTime>2016-02-18T11:30:16.000Z</pubTime>
+        <title>Android 性能优化</title>
+        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
         
-        <tag>android系列</tag>
+        <tag>Android</tag>
          
          
            
              
-              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
           
         </display>
     </data>
@@ -1076,14 +1076,14 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
+    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>Android 性能优化</title>
-        <pubTime>2016-10-28T07:30:16.000Z</pubTime>
+        <title>Retrofit源码解析（一）</title>
+        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>retrofit</tag>
          
          
            
@@ -1136,26 +1136,6 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2016/09/17/android-retrofit-01/</loc>
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Retrofit源码解析（一）</title>
-        <pubTime>2016-09-17T07:30:16.000Z</pubTime>
-        
-        <tag>retrofit</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hujiandong.com/2016/11/07/android-log-used/</loc>
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
@@ -1169,6 +1149,26 @@
            
              
               <breadCrumb title="Android" url="http://hujiandong.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2015/09/15/android_import_so/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu Android studio中引入so文件的方法</title>
+        <pubTime>2015-09-15T09:10:00.000Z</pubTime>
+        
+        <tag>android studio</tag>
+         
+         
+           
+             
+              <breadCrumb title="notes" url="http://hujiandong.com/categories/notes/"/>
           
         </display>
     </data>
@@ -1336,19 +1336,19 @@
 
     
   <url>
-    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
-    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
+    <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     <data>
         <display>
-        <title>我为什么写博客</title>
-        <pubTime>2011-12-18T07:30:16.000Z</pubTime>
+        <title>android笔记-数据篇</title>
+        <pubTime>2016-02-18T11:30:16.000Z</pubTime>
         
-        <tag>随笔</tag>
+        <tag>android系列</tag>
          
          
            
              
-              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+              <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
           
         </display>
     </data>
@@ -1371,6 +1371,26 @@
            
              
               <breadCrumb title="android" url="http://hujiandong.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hujiandong.com/2011/12/18/2011-12-18-why-blog/</loc>
+    <lastmod>2016-11-07T08:48:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>我为什么写博客</title>
+        <pubTime>2011-12-18T07:30:16.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂谈" url="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
           
         </display>
     </data>
