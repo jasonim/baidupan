@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/05/05/review-college/</loc>
+    
+    <lastmod>2017-05-06T08:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2017/04/28/evils_live/</loc>
     
     <lastmod>2017-05-06T08:18:16.000Z</lastmod>
@@ -136,13 +143,6 @@
   
   <url>
     <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2016/05/20/android-unit-test/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -479,6 +479,13 @@
   
   <url>
     <loc>http://hujiandong.com/2015/10/20/android_foregound_app/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2016/05/20/android-unit-test/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     

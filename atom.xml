@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-05-06T08:18:16.000Z</updated>
+  <updated>2017-05-06T08:25:03.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如果再让你重回大学，你会怎样做？</title>
+    <link href="http://hujiandong.com/2017/05/05/review-college/"/>
+    <id>http://hujiandong.com/2017/05/05/review-college/</id>
+    <published>2017-05-05T07:30:16.000Z</published>
+    <updated>2017-05-06T08:25:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>又快到毕业季了，转眼间自己已经快毕业六个年头。 前几天微信群同学们聊了一些， 想起自己大学一些经历，很有感触， 真心想回学校去看看。正好最近被问到：</p>
+<blockquote>
+<p>如果再让你重回大学，你会怎样做？</p>
+</blockquote>
+<p>当然这个问题本身就是个伪命题， 因为根本就没有如果。不过你们还有如果， 当你还在大学里或者未踏入大学校园， 可以参考一下， 谈不上建议，只是一些个人想法。</p>
+<h2 id="1-一定要谈个恋爱"><a href="#1-一定要谈个恋爱" class="headerlink" title="1 一定要谈个恋爱"></a>1 一定要谈个恋爱</h2><p>以前再 「那些年我的编程之路（上）」 也写到：</p>
+<p>「现在谈了， 毕业就分手， 还不如不谈」。 因为每个个体都不一样， 不试试怎么会知道呢？我不能说一定不会分手， 至少我身边的有一两个包括我自己都没有分手， 而且还结婚了。是不是让吃瓜群众失望了。当然我们几个只是个体，不代表普遍规律， 因为确实有很多毕业后都分手了。<br>但是有一点是真的，恋爱能让人成长。还有最主要的原因是看你们怎么对待这段感情的， 也就是对待感情的态度， 我看到的好多分手的，都是对待感情太随意。</p>
+<p>有人说， 毕业后也可以谈恋爱，当然可以谈， 也有爱情。只是大学恋爱，不用考虑家庭，不用考虑背景，只是恋爱。那种美，那种记忆， 只用在那个年纪，那个环境下的人才能体会。</p>
+<p>再多的争执，再多的不快， 都会让一句话冲淡，你还记得校园时候的彼此吗？<br>就像在电影《摆渡人》中马力在分手时对她的女友江洁说：<br>08年7月29日，<br>你穿着蓝色连衣裙，<br>扎着马尾辫，<br>那时我记一次见你的样子。<br>你多保重。</p>
+<p>未完，偷个懒，详细的信息看这里吧<br><strong><a href="http://mp.weixin.qq.com/s/c7qpF0gRpFBiAkFG_pKq_A" target="_blank" rel="external">如果再让你重回大学，你会怎样做？</a></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      如果没做到第一条， 你可能上的是假大学
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://hujiandong.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂谈" scheme="http://hujiandong.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title>一个视频直播开源项目--EvilsLive</title>
@@ -1264,55 +1296,6 @@
       <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
     
       <category term="开源项目" scheme="http://hujiandong.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android Log打印的正确姿势</title>
-    <link href="http://hujiandong.com/2016/11/07/android-log-used/"/>
-    <id>http://hujiandong.com/2016/11/07/android-log-used/</id>
-    <published>2016-11-07T08:48:27.000Z</published>
-    <updated>2016-11-07T08:48:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>大家对输出Log肯定不陌生吧， 任何语言任何程序都少不了Log读出， 程序交付前我们可以用它来调试code， 交付后我们可以用它来排除问题。记得当时用C写程序时，我们经常唱“print 大法好哎！print 大法好哎！print 大法好哎！”</p>
-<p>Log 的输出是耗时的， 正确的Log打印可以提供工作效率，反之会带来副作用，所以要善用Log打印。有人把程序员分为五类，你可能多多少少有它们中一类或多类的影子。</p>
-<blockquote>
-<ul>
-<li>IDD（IDE-Driven Development），也就是IDE驱动开发，几乎是初学者进入软件开发的殿堂的必经之路。IDE开发者屏蔽了很多细节，并且几乎不用配置（相对于 vim / emacs / sublime）就可以使用代码自动补全，代码跳转，搜索，以及签入签出等软件开发中将会使用到的几乎所有工作。</li>
-<li>DDD（Debugger-Driven Development）<br>DDD，面向调试器开发，是 IDD 依赖到一定程度的必然反应。这种开发模式的典型表现为：写出来的代码不知道对不对，从头到尾设置无数个断点，然后进入到调试模式，一个断点一个断点跟踪。发现一个问题，解决一个问题（也许引入一个新的问题），直到所有断点走数遍，所有遇到的问题被消灭，抹一抹头上的汗，心里骂上一句：妈的，这段代码老子（娘）终于调通了！</li>
-<li>BDD（Bug-Driven Development）<br>看到 BDD，也就是问题单驱动开发，相信大家都相视一笑。本来这里我想用 TDD（Ticket-Driven Development），更接近我的原意，为了不和 Test-Driven Development 混淆，故而只好改成 BDD。这可能是我们最熟悉的开发模式了 —— 在一个业务稳定的软件公司（甭管规模大小），勉力维护现有的代码，小心地添加新功能是多数程序员的主要职责。在这些公司里，与其说我们是工程师，不如说我们是补锅匠。看不懂代码？没关系，只要你会读日志（出错信息）；解决不了问题？不打紧，能找到 workaround 把问题绕过去也可以，更有甚者，遇到神问题，看不懂，想不明，解不了，还没有 workaround，大笔一挥：not reproducible，就把问题关了，几个月半年后，说不定自己已经去补别的锅了。</li>
-<li>RDD（Rat-race-game-Driven Development）<br>RDD，老鼠赛跑驱动的开发，是指那些整个职业生涯都在原地打转的开发模式。Rat race game 是『富爸爸穷爸爸』中的经典例子 —— 老鼠在环形的笼子里拼命地奔跑。</li>
-</ul>
-</blockquote>
-<p>如想了解更多， 请参见<a href="http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;mid=402343575&amp;idx=1&amp;sn=cf5bd19b7eb979c0904692475c5f997d&amp;scene=0#wechat_redirect" target="_blank" rel="external">原文</a>, 看看作者怎么分析每类人的， 你值得拥有。 </p>
-<p>好了， 来说说Android的Log打印的一些方法和技巧，为了简单起见，下文中AS就是Android Studio的缩写。</p>
-<h1 id="善用adb-logcat"><a href="#善用adb-logcat" class="headerlink" title="善用adb logcat"></a>善用adb logcat</h1><p>我看到有些测试人员为了，看程序的Log， 还特意装一个AS。有时候想问为什么不用adb logcat，难道是没有linux下的shell命令吗， 好吧， 被你的无邪打败了。</p>
-<p>有时候我们要看一个Java层的奔溃，我仅仅需要下面命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat | grep -i &quot;system.err&quot;</div></pre></td></tr></table></figure>
-<p>想看看别的，使用process输出格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">adb logcat -v process</div></pre></td></tr></table></figure>
-<h1 id="AS-使用技巧"><a href="#AS-使用技巧" class="headerlink" title="AS 使用技巧"></a>AS 使用技巧</h1><p>AS提供了很多的模板功能, 自己也可以根据情况自己定义：</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/live-template.png" alt="template设置"></p>
-<p>自动填写Tag、方法名和返回值：</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/log.gif" alt=""></p>
-<h1 id="动态设置值"><a href="#动态设置值" class="headerlink" title="动态设置值"></a>动态设置值</h1><p>你在调试时会不也遇到这样的情况，为了进入不同分支，最笨的办法是每次都有修改一下条件变量的代码， 然后重新编译运行。现在我们可以利用debug的setValue(Mac F2)方法动态设置值, 下面代码 变量b 开始等于0， 正常情况下会进入catch条件; 现在我将它修改为2， 它就不会进入catch条件了。</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/setvalue.gif" alt=""> </p>
-<h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><p>你可以用第三方库（<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>、<a href="https://github.com/pengwei1024/LogUtils" target="_blank" rel="external">LogUtils</a>、<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>）或自己改造log框架， 让打印更美观。</p>
-<p><img src="http://7xnilf.com1.z0.glb.clouddn.com/logger-log.png" alt="Logger效果图"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一万个人心中有一万个丘比特，所有找到一个自己适合的打印方式。</p>
-<p><strong>希望大家使用愉快！</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      Android Log打印的正确姿势
-    
-    </summary>
-    
-      <category term="Android" scheme="http://hujiandong.com/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://hujiandong.com/tags/Android/"/>
     
   </entry>
   
