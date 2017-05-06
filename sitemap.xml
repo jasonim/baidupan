@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hujiandong.com/2017/05/06/evils_live/</loc>
+    
+    <lastmod>2017-05-06T08:10:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hujiandong.com/2017/04/22/learning_fake/</loc>
     
     <lastmod>2017-05-06T07:48:28.000Z</lastmod>
@@ -128,14 +135,7 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
-    
-    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hujiandong.com/2015/10/20/android_foregound_app/</loc>
+    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
+    <loc>http://hujiandong.com/2016/03/13/how_code_refactor/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hujiandong.com/2016/09/11/iterm2/</loc>
+    <loc>http://hujiandong.com/2016/10/28/android-performance/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
@@ -472,6 +472,13 @@
   
   <url>
     <loc>http://hujiandong.com/2016/02/18/android_note_data/</loc>
+    
+    <lastmod>2016-11-07T08:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hujiandong.com/2015/10/20/android_foregound_app/</loc>
     
     <lastmod>2016-11-07T08:48:27.000Z</lastmod>
     
