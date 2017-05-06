@@ -274,8 +274,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/06/evils_live/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2017/04/28/evils_live/" itemprop="url">
+                  一个视频直播开源项目--EvilsLive
                 </a>
               
             
@@ -288,19 +288,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-06T15:50:53+08:00" content="2017-05-06">
-              2017-05-06
+            <time itemprop="dateCreated" datetime="2017-04-28T15:30:16+08:00" content="2017-04-28">
+              2017-04-28
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/05/06/evils_live/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/06/evils_live/" itemprop="commentsCount"></span>
+                <a href="/2017/04/28/evils_live/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/28/evils_live/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,7 +329,7 @@
 
           
           
-             <span id="/2017/05/06/evils_live/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2017/04/28/evils_live/" class="leancloud_visitors" data-flag-title="一个视频直播开源项目--EvilsLive">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -333,47 +352,12 @@
 
       
         
-          
-            <p>title: 一个视频直播开源项目<br>date: 2017-04-28 15:30:16<br>categories: 杂谈<br>tags: [杂谈] #文章标签，可空，多标签请用格式，注意:后面有个空格<br>description: 一个视频直播开源项目</p>
-<p>我在 「<strong><a href="http://hujiandong.com/2017/04/22/learning_fake/">漫无目标的假学习者</a></strong>」 写到：</p>
-<blockquote>
-<p>对于技术人来说，目标就是可以做一个解决自己生活中遇到问题的小产品，学习不阶段不要忌讳重复造轮子，努力做到 500 日活；做个开源项目，努力得到500个 Star；做个小工具，努力赚到 500 人民币；做个小社群，努力拥有 500 个注册用户，或者开一篇博客， 写个公众号， 努力做到 500 阅读量。</p>
-</blockquote>
-<p>当然我也没闲着，不是只是说说， 践行是我实现目标唯一途径。年后我们启动一个直播的软件开发工具包（SDK）项目， 目前支持 Android 平台， 以后还会支持 Web/IOS 平台。主要包括音视频采集、推流、预览、播放等功能。</p>
-<p>目前支持的功能：</p>
-<ul>
-<li>视频编码：H.264</li>
-<li>推流协议：RTMP</li>
-<li>预览与推流分辨率可分别自由设置</li>
-<li>支持前、后置摄像头动态切换</li>
-</ul>
-<p>开发过程中也遇到一些坑：</p>
-<ul>
-<li>Activity 设置为竖屏时，SurfaceView 预览图像颠倒90度。</li>
-<li>SurfaceView 预览图像拉伸变形。</li>
-<li>播放视频流延时30s 以上。</li>
-<li>编码图像显示黑白，无法显示彩色问题。</li>
-<li>各种 Crash</li>
-<li>…</li>
-</ul>
-<p>现在仅仅实现部分功能， 项目还将持续更新中…</p>
-<p>其中 Songlcy 小伙伴看到这个项目后问， 如何快速入门音视频，直播？希望这个项目能真正帮助到类似这样的小伙伴，这也是我们继续的动力。下面是我的回答：<br><img src="http://7xnilf.com1.z0.glb.clouddn.com/tiwen.png" alt=""></p>
-<p>小龙同学坐在没有靠背的凳子上 Coding; 阿峰同学笔记本放在被子上或半躺着Coding; 而我坐在垫子上趴在床边Coding。在这个不到 12  平的房间里， 上面的画面不难想象。<br>期间有一次隔壁的一小伙看到我们这样问:</p>
-<blockquote>
-<p>难道你们是在进行传说中创业吗？</p>
-</blockquote>
-<p>在这里特别感谢 小龙和阿峰同学参与， 没有他们的参与我是不可能坚持到现在的。由于我们平时都有本职工作要做而且平时都很忙，基本上只能周末参与此项目。为了快速得到正反馈，代码编码质量、Code review、测试覆盖率， 计划的制定和执行力方面多多少少有点问题，不过总体还在可控阶段。</p>
-<p><a href="https://github.com/ThinkKeep/EvilsLive" target="_blank" rel="external">ThinkKeep/EvilsLive</a></p>
-<p>PS：</p>
-<p>最后， 我们的小龙同学要和他妹子结婚了， 看来阿峰同学要失落了， 我顺便讨个喜气，祝小龙：</p>
-<p>一阳初动，二姓和谐，庆三多，具四美，五四其倡征风卜。</p>
-<p>记得以前再知乎上看到， 『程序员结婚戒指刻什么字好？』其中一个答案很赞：</p>
-<p>0  error  0 warning</p>
-<p>你可以去试试， 然后告诉我们体验， 是不是还会有 Crash？</p>
-<p>五一小长假要到来， 祝大家吃好玩好！</p>
-<p>项目的详细信息，请点击原文阅读！</p>
-
-          
+          一个视频直播开源项目
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/04/28/evils_live/">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
