@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
-  <updated>2017-05-06T08:13:19.000Z</updated>
+  <updated>2017-05-06T08:13:48.000Z</updated>
   <id>http://hujiandong.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hujiandong.com/2017/05/06/evils_live/"/>
     <id>http://hujiandong.com/2017/05/06/evils_live/</id>
     <published>2017-05-06T07:50:53.000Z</published>
-    <updated>2017-05-06T08:13:19.000Z</updated>
+    <updated>2017-05-06T08:13:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>title: 一个视频直播开源项目–EvilsLive<br>date: 2017-04-28 15:30:16<br>categories: 杂谈<br>tags: [杂谈] #文章标签，可空，多标签请用格式，注意:后面有个空格<br>description: 一个视频直播开源项目–EvilsLive</p>
 <p>我在 「<strong><a href="http://hujiandong.com/2017/04/22/learning_fake/">漫无目标的假学习者</a></strong>」 写到：</p>
@@ -50,6 +50,16 @@
 <blockquote>
 <p>难道你们是在进行传说中创业吗？</p>
 </blockquote>
+<p>在这里特别感谢 小龙和阿峰同学参与， 没有他们的参与我是不可能坚持到现在的。由于我们平时都有本职工作要做而且平时都很忙，基本上只能周末参与此项目。为了快速得到正反馈，代码编码质量、Code review、测试覆盖率， 计划的制定和执行力方面多多少少有点问题，不过总体还在可控阶段。</p>
+<p><a href="https://github.com/ThinkKeep/EvilsLive" target="_blank" rel="external">ThinkKeep/EvilsLive</a></p>
+<p>PS：</p>
+<p>最后， 我们的小龙同学要和他妹子结婚了， 看来阿峰同学要失落了， 我顺便讨个喜气，祝小龙：</p>
+<p>一阳初动，二姓和谐，庆三多，具四美，五四其倡征风卜。</p>
+<p>记得以前再知乎上看到， 『程序员结婚戒指刻什么字好？』其中一个答案很赞：</p>
+<p>0  error  0 warning</p>
+<p>你可以去试试， 然后告诉我们体验， 是不是还会有 Crash？</p>
+<p>五一小长假要到来， 祝大家吃好玩好！</p>
+<p>项目的详细信息，请点击原文阅读！</p>
 ]]></content>
     
     <summary type="html">
