@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Baidu Pan</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/baidupan/atom.xml" rel="self"/>
   
   <link href="http://hujiandong.com/"/>
   <updated>2020-01-04T13:56:19.000Z</updated>
