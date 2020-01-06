@@ -1,0 +1,885 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/baidupan/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/baidupan/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/baidupan/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/baidupan/atom.xml" title="Baidu Pan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/baidupan/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="独立观察员·博客 文章PDF版size: 43.37 MB 八、EmguCV读取图像，并用WPF的Image控件显示 CSDN博客_网盘搜索-58网盘搜索
+|- 967_IIS与Tomcat整合二三事iis-tomcat.pdf - 1.80 MB|- 957网络病毒防治技术老师给我们的“黑客”程序_control-program.pdf - 1.70 MB|- 92_HeadWay_3.6.2下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="独立观察员·博客 文章PDF版">
+<meta property="og:url" content="https://jasonim.github.io/独立观察员·博客_文章PDF版/index.html">
+<meta property="og:site_name" content="Baidu Pan">
+<meta property="og:description" content="独立观察员·博客 文章PDF版size: 43.37 MB 八、EmguCV读取图像，并用WPF的Image控件显示 CSDN博客_网盘搜索-58网盘搜索
+|- 967_IIS与Tomcat整合二三事iis-tomcat.pdf - 1.80 MB|- 957网络病毒防治技术老师给我们的“黑客”程序_control-program.pdf - 1.70 MB|- 92_HeadWay_3.6.2下">
+<meta property="og:updated_time" content="2020-01-06T14:36:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="独立观察员·博客 文章PDF版">
+<meta name="twitter:description" content="独立观察员·博客 文章PDF版size: 43.37 MB 八、EmguCV读取图像，并用WPF的Image控件显示 CSDN博客_网盘搜索-58网盘搜索
+|- 967_IIS与Tomcat整合二三事iis-tomcat.pdf - 1.80 MB|- 957网络病毒防治技术老师给我们的“黑客”程序_control-program.pdf - 1.70 MB|- 92_HeadWay_3.6.2下">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/baidupan/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jasonim.github.io/独立观察员·博客_文章PDF版/"/>
+
+
+
+
+
+  <title>独立观察员·博客 文章PDF版 | Baidu Pan</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66670171-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bce6c38410e11063877362ffaf8f9bdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/baidupan/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Baidu Pan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/baidupan/home" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/baidupan/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://jasonim.github.io/baidupan/独立观察员·博客_文章PDF版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JasonThink">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/5361486?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Baidu Pan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">独立观察员·博客 文章PDF版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-06T17:47:57+08:00">
+                2020-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/baidupan/categories/baidu/" itemprop="url" rel="index">
+                    <span itemprop="name">baidu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/baidupan/独立观察员·博客_文章PDF版/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/baidupan/独立观察员·博客_文章PDF版/" class="leancloud_visitors" data-flag-title="独立观察员·博客 文章PDF版">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="独立观察员·博客-文章PDF版"><a href="#独立观察员·博客-文章PDF版" class="headerlink" title="独立观察员·博客 文章PDF版"></a>独立观察员·博客 文章PDF版</h1><p>size: 43.37 MB<br> 八、EmguCV读取图像，并用WPF的Image控件显示 CSDN博客_网盘搜索-58网盘搜索</p>
+<p>|- 967_IIS与Tomcat整合二三事<em>iis-tomcat.pdf - 1.80 MB<br>|- 957</em>网络病毒防治技术老师给我们的“黑客”程序_control-program.pdf - 1.70 MB<br>|- 92_HeadWay_3.6.2下载与更新_headway-3-6-2-download-and-updates.pdf - 147.00 kB<br>|- 921_2014杀毒软件大比拼<em>2014-anti-virus-software.pdf - 4.70 MB<br>|- 792</em>『Windows』减少“为硬件保留的内存”<em>reduced-the-reserved-memony.pdf - 692.00 kB<br>|- 779</em>为博客文章中的引用添加引用样式<em>add-quote-style-for-blog.pdf - 107.00 kB<br>|- 773</em>将win10中的开始菜单还原为win8-8.1的开始屏幕_change-win10-startmenu-to-win8-1.pdf - 737.00 kB<br>|- 752_WordPress在侧边栏添加随机文章展示功能_wordpress-show-random.pdf - 243.00 kB<br>|- 742_140914思想汇报导演剪辑版<em>140914-sxhb.pdf - 22.00 kB<br>|- 732</em>在VS2010中打开VS2013的C#项目的方法<em>open-vs2013-project-in-vs2010.pdf - 114.00 kB<br>|- 721</em>安卓手机Google账户管理程序无法添加现有帐号的问题<em>add-google-account.pdf - 898.00 kB<br>|- 702</em>中国工商银行更改手机号绑定攻略_icbc-change-cellphone.pdf - 501.00 kB<br>|- 68_WordPress使用HeadWay主题和WP-PostViews插件显示浏览量的简单方法<em>headway-wp-postviews-display-views.pdf - 391.00 kB<br>|- 672</em>一加手机Root方法<em>one-plus-root.pdf - 131.00 kB<br>|- 663</em>『独立观察员』曾经拥有过或使用过的数码产品_digital<em>products.pdf - 2.50 MB<br>|- 631</em>『食堂外卖系统』功能展示<em>orderfood.pdf - 2.70 MB<br>|- 601</em>证件照排版打印软件推荐_photoscape.pdf - 1.00 MB<br>|- 586_C#的WPF中的Image控件中载入图片的方法<em>wpf-image-load-picture.pdf - 596.00 kB<br>|- 573</em>『独立观察员』大三下思想汇报<em>dsxsxhb.pdf - 22.00 kB<br>|- 564</em>『独立观察员』个人观影Ⅱ<em>movies2.pdf - 97.00 kB<br>|- 564</em>『独立观察员』个人观影Ⅱ<em>movies2(3).pdf - 51.00 kB<br>|- 564</em>『独立观察员』个人观影Ⅱ<em>movies2(2).pdf - 120.00 kB<br>|- 564</em>『独立观察员』个人观影Ⅱ<em>movies2(1).pdf - 120.00 kB<br>|- 552</em>分享可扩大MT6589处理器手机之系统空间的软件<em>expand-mt6589-rom-space.pdf - 832.00 kB<br>|- 531</em>恒生2014校园招聘笔试题<em>hundsun-2014-exam.pdf - 2.40 MB<br>|- 512</em>自用WordPress插件推荐_wordpress-plugin-dlgcy.pdf - 2.20 MB<br>|- 50_WordPress主题Headway反复要求登录的问题<em>wordpress-headway-login.pdf - 97.00 kB<br>|- 477</em>『网络安全』使用PGP实现电子邮件安全<em>pgp-and-mail.pdf - 4.70 MB<br>|- 423</em>驾校学习之科目二笔记<em>km2.pdf - 22.00 kB<br>|- 411</em>『作业』『形势与政策』关于2014年全国“扫黄打非”行动的一些观察<em>shdf2014.pdf - 21.00 kB<br>|- 399</em>『网络安全』RSA与MD5的C实现实验报告_rsa-and-md5.pdf - 117.00 kB<br>|- 378_SEO插件All_in_One_SEO_Pack新版本&amp;汉化下载<em>all-in-one-seo-pack-new-version-cn.pdf - 298.00 kB<br>|- 373</em>解决转发新浪博客插件wp2sinablog修改文章后重新发布的问题<em>wp2sinablog-problem.pdf - 495.00 kB<br>|- 366</em>『作业』网络安全实验_凯撒密码与DES的C实现<em>kaisa.pdf - 64.00 kB<br>|- 348</em>《Windows网络编程》_罗莉琴版<em>8.3节</em>基于Select模型的Socket编程_代码<em>select-model.pdf - 30.00 kB<br>|- 345</em>【作业】参加预备党员培训班学习的心得体会_ybdyxdth.pdf - 21.00 kB<br>|- 319_WordPress非插件使用fancybox<em>wordpress-noplugin-use-fancybox.pdf - 353.00 kB<br>|- 285</em>「独立观察员」个人「阅」历<em>books.pdf - 99.00 kB<br>|- 285</em>「独立观察员」个人「阅」历<em>books(1).pdf - 101.00 kB<br>|- 278</em>『独立观察员』个人观影<em>movies.pdf - 178.00 kB<br>|- 278</em>『独立观察员』个人观影<em>movies(2).pdf - 38.00 kB<br>|- 278</em>『独立观察员』个人观影<em>movies(1).pdf - 179.00 kB<br>|- 243</em>『作业』『网络安全』病毒查杀实验报告<em>anquanruanjian.pdf - 2.10 MB<br>|- 216</em>为WordPress增加上一篇下一篇功能<em>add-pre-next-func.pdf - 107.00 kB<br>|- 204</em>小米帐号注销方法<em>xiaomi-account-delete.pdf - 92.00 kB<br>|- 196</em>【WP插件】友情链接Ultimate_Blogroll<em>2.5.2</em>汉化版<em>ultimate-blogroll-2-5-2.pdf - 259.00 kB<br>|- 152</em>『符号包裹』列表清单符号批量处理软件_fhbg.pdf - 239.00 kB<br>|- 1465<em>VisualStudio</em>使用<em>DialogPage</em>存储配置信息<em>visualstudio-use-dialogpage.pdf - 219.00 kB<br>|- 1450</em>分页SQL语句<em>sql-page.pdf - 22.00 kB<br>|- 1398</em>『笔记分享』GridView_自定义分页<em>gridview-pager.pdf - 36.00 kB<br>|- 1384</em>使用Git_Extensions简单入门Git<em>git-extensions.pdf - 3.50 MB<br>|- 1337</em>优酷去除广告方法<em>remove-youku-ad.pdf - 46.00 kB<br>|- 1319</em>百度云盘批量离线下载思想<em>baiduyun-batch-download.pdf - 522.00 kB<br>|- 1287</em>『日记』20150818凌晨<em>20150818-early-morning.pdf - 18.00 kB<br>|- 1241</em>『毕设程序简介』学生办事预约平台<em>studentappointmentplatform.pdf - 326.00 kB<br>|- 1207</em>使用TortoiseSVN将某个SVN目录下的目录指向另一个仓库<em>use-tortoisesvn-to-change-subcatalog-repository.pdf - 616.00 kB<br>|- 1186</em>已安装好的系统(MBR常规启动)如何改成UEFI启动？<em>bios-to-uefi.pdf - 1.30 MB<br>|- 1166</em>分享ASP.NET固定GridView表头的方法<em>asp-net-fix-gridview-header.pdf - 409.00 kB<br>|- 1151</em>『外文翻译』基于数据库的在线订房系统<em>translate-online-room-booking-system-based-on-database.pdf - 44.00 kB<br>|- 1107</em>个性签名档收集<em>signature-line.pdf - 41.00 kB<br>|- 1107</em>个性签名档收集_signature-line(1).pdf - 43.00 kB<br>|- 1064_WordPress在侧边栏添加显示最近更新的文章列表_show-latest-article.pdf - 60.00 kB<br>|- 1051_Visual_Studio<em>2010</em>适用的高亮插件<em>vs2010-highlight.pdf - 839.00 kB<br>|- 1030</em>【编辑】手机病毒“XX神器”分析_xxshengqi.pdf - 880.00 kB<br>|- 1011_201412思想汇报_sxhb201412.pdf - 21.00 kB</p>
+<p><a href="https://bpcam.bemobtrk.com/go/2ceec3aa-1ca2-46d6-b9ff-aaa5c184517c?jno=4049" target="_blank" rel="external">How to download</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/baidupan/【VIP精品资源】英文原版杂志-哈佛商业评论经济学人Business_Insider/" rel="next" title="【VIP精品资源】英文原版杂志-哈佛商业评论经济学人Business Insider">
+                <i class="fa fa-chevron-left"></i> 【VIP精品资源】英文原版杂志-哈佛商业评论经济学人Business Insider
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/baidupan/【UA汉化组】_Absolute_car./" rel="prev" title="【UA汉化组】 Absolute car.">
+                【UA汉化组】 Absolute car. <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/5361486?v=3&s=460"
+               alt="JasonThink" />
+          <p class="site-author-name" itemprop="name">JasonThink</p>
+           
+              <p class="site-description motion-element" itemprop="description">胡建东的个人站点</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/baidupan/archives">
+                <span class="site-state-item-count">1255</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/baidupan/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jasonim" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/baidupan/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#独立观察员·博客-文章PDF版"><span class="nav-number">1.</span> <span class="nav-text">独立观察员·博客 文章PDF版</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JasonThink</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/baidupan/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/baidupan/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/baidupan/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/baidupan/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/baidupan/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/baidupan/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/baidupan/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/baidupan/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/baidupan/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/baidupan/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/baidupan/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "5edce61c5695413c9e9da1f126bd0cc7",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("H9mD0w4jrikMi4iHPcVvTycJ-gzGzoHsz", "B504ioHpQDe9l3EdrNc3xAue");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
